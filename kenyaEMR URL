@@ -1,0 +1,1061 @@
+
+
+https://kenyaemr.kenyahmis.org/openmrs/kenyaemr/enterForm.page?returnUrl=/openmrs/kenyaemr/registration/registrationViewPatient.page?patientId=2077&&formUuid=e4b506c1-7379-42b6-a374-284469cba8da&patientId=2077&appId=kenyaemr.registration&
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+agik@agik:~$ ssh muzima@192.168.88.118
+muzima@192.168.88.118's password: 
+Welcome to Ubuntu 14.04.4 LTS (GNU/Linux 4.2.0-27-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 13 04:57:43 EDT 2019
+
+  System load:  0.03               Processes:          116
+  Usage of /:   0.9% of 452.53GB   Users logged in:    1
+  Memory usage: 16%                IP address for em1: 192.168.88.118
+  Swap usage:   0%
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+198 packages can be updated.
+149 updates are security updates.
+
+New release '16.04.6 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Last login: Wed Mar 13 04:57:45 2019 from 192.168.88.100
+muzima@ubuntu:~$ ls
+leave_system
+muzima@ubuntu:~$ cd leave_system/
+muzima@ubuntu:~/leave_system$ ls
+client  server
+muzima@ubuntu:~/leave_system$ cd server/
+muzima@ubuntu:~/leave_system/server$ ls
+__init__.py  app.py  initializer.py  migrations  routes  test.py  wsgi.py
+__pycache__  auths   manage.py       models      run.py  uuid
+muzima@ubuntu:~/leave_system/server$ cd ../
+muzima@ubuntu:~/leave_system$ python3 -m venv venv
+The virtual environment was not created successfully because ensurepip is not
+available.  On Debian/Ubuntu systems, you need to install the python3-venv
+package using the following command.
+
+    apt-get install python3-venv
+
+You may need to use sudo with that command.  After installing the python3-venv
+package, recreate your virtual environment.
+
+muzima@ubuntu:~/leave_system$ sudo python3 -m venv venv
+[sudo] password for muzima: 
+The virtual environment was not created successfully because ensurepip is not
+available.  On Debian/Ubuntu systems, you need to install the python3-venv
+package using the following command.
+
+    apt-get install python3-venv
+
+You may need to use sudo with that command.  After installing the python3-venv
+package, recreate your virtual environment.
+
+muzima@ubuntu:~/leave_system$ sudo install python3-venv
+install: missing destination file operand after 'python3-venv'
+Try 'install --help' for more information.
+muzima@ubuntu:~/leave_system$ sudo apt-get install python3-pip
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+python3-pip is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 184 not upgraded.
+muzima@ubuntu:~/leave_system$ python3 -m venv venv
+The virtual environment was not created successfully because ensurepip is not
+available.  On Debian/Ubuntu systems, you need to install the python3-venv
+package using the following command.
+
+    apt-get install python3-venv
+
+You may need to use sudo with that command.  After installing the python3-venv
+package, recreate your virtual environment.
+
+muzima@ubuntu:~/leave_system$ sudo pip3 install virtualenv 
+Downloading/unpacking virtualenv
+  Downloading virtualenv-16.4.3-py2.py3-none-any.whl (2.0MB): 2.0MB downloaded
+Installing collected packages: virtualenv
+Successfully installed virtualenv
+Cleaning up...
+muzima@ubuntu:~/leave_system$ virtualenv venv
+Using base prefix '/usr'
+New python executable in /home/muzima/leave_system/venv/bin/python3
+Traceback (most recent call last):
+  File "/usr/local/bin/virtualenv", line 11, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.4/dist-packages/virtualenv.py", line 793, in main
+    symlink=options.symlink,
+  File "/usr/local/lib/python3.4/dist-packages/virtualenv.py", line 1071, in create_environment
+    install_python(home_dir, lib_dir, inc_dir, bin_dir, site_packages=site_packages, clear=clear, symlink=symlink)
+  File "/usr/local/lib/python3.4/dist-packages/virtualenv.py", line 1457, in install_python
+    shutil.copyfile(executable, py_executable)
+  File "/usr/lib/python3.4/shutil.py", line 92, in copyfile
+    raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+shutil.SameFileError: '/usr/bin/python3' and '/home/muzima/leave_system/venv/bin/python3' are the same file
+muzima@ubuntu:~/leave_system$ source venv/bin/activate
+-bash: venv/bin/activate: No such file or directory
+muzima@ubuntu:~/leave_system$ virtualenv -p /usr/bin/python3 venv
+Already using interpreter /usr/bin/python3
+Using base prefix '/usr'
+New python executable in /home/muzima/leave_system/venv/bin/python3
+Traceback (most recent call last):
+  File "/usr/local/bin/virtualenv", line 11, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.4/dist-packages/virtualenv.py", line 793, in main
+    symlink=options.symlink,
+  File "/usr/local/lib/python3.4/dist-packages/virtualenv.py", line 1071, in create_environment
+    install_python(home_dir, lib_dir, inc_dir, bin_dir, site_packages=site_packages, clear=clear, symlink=symlink)
+  File "/usr/local/lib/python3.4/dist-packages/virtualenv.py", line 1457, in install_python
+    shutil.copyfile(executable, py_executable)
+  File "/usr/lib/python3.4/shutil.py", line 92, in copyfile
+    raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+shutil.SameFileError: '/usr/bin/python3' and '/home/muzima/leave_system/venv/bin/python3' are the same file
+muzima@ubuntu:~/leave_system$ virtualenv -p /usr/bin/python3 venv
+Already using interpreter /usr/bin/python3
+Using base prefix '/usr'
+New python executable in /home/muzima/leave_system/venv/bin/python3
+Traceback (most recent call last):
+  File "/usr/local/bin/virtualenv", line 11, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.4/dist-packages/virtualenv.py", line 793, in main
+    symlink=options.symlink,
+  File "/usr/local/lib/python3.4/dist-packages/virtualenv.py", line 1071, in create_environment
+    install_python(home_dir, lib_dir, inc_dir, bin_dir, site_packages=site_packages, clear=clear, symlink=symlink)
+  File "/usr/local/lib/python3.4/dist-packages/virtualenv.py", line 1457, in install_python
+    shutil.copyfile(executable, py_executable)
+  File "/usr/lib/python3.4/shutil.py", line 92, in copyfile
+    raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+shutil.SameFileError: '/usr/bin/python3' and '/home/muzima/leave_system/venv/bin/python3' are the same file
+muzima@ubuntu:~/leave_system$ source venv/bin/activate
+-bash: venv/bin/activate: No such file or directory
+muzima@ubuntu:~/leave_system$ ls
+client  server  venv
+muzima@ubuntu:~/leave_system$ cd client/
+muzima@ubuntu:~/leave_system/client$ sudo ufw allow 5000
+Rule added
+Rule added (v6)
+muzima@ubuntu:~/leave_system/client$ cd ../
+muzima@ubuntu:~/leave_system$ python3 -m venv venv
+The virtual environment was not created successfully because ensurepip is not
+available.  On Debian/Ubuntu systems, you need to install the python3-venv
+package using the following command.
+
+    apt-get install python3-venv
+
+You may need to use sudo with that command.  After installing the python3-venv
+package, recreate your virtual environment.
+
+muzima@ubuntu:~/leave_system$ install python3-venv
+install: missing destination file operand after 'python3-venv'
+Try 'install --help' for more information.
+muzima@ubuntu:~/leave_system$ python -m venv leave
+/usr/bin/python: No module named venv
+muzima@ubuntu:~/leave_system$ sudo apt install python3-venv
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package python3-venv
+muzima@ubuntu:~/leave_system$ ls
+client  server  venv
+muzima@ubuntu:~/leave_system$ cd server/
+muzima@ubuntu:~/leave_system/server$ ls
+__init__.py  app.py  initializer.py  migrations  routes  test.py  wsgi.py
+__pycache__  auths   manage.py       models      run.py  uuid
+muzima@ubuntu:~/leave_system/server$ cd ../
+muzima@ubuntu:~/leave_system$ cd venv/
+muzima@ubuntu:~/leave_system/venv$ ls
+bin  include  lib  lib64  pyvenv.cfg
+muzima@ubuntu:~/leave_system/venv$ cd bin/
+muzima@ubuntu:~/leave_system/venv/bin$ ls
+python  python3
+muzima@ubuntu:~/leave_system/venv/bin$ cd ../../
+muzima@ubuntu:~/leave_system$ ls
+client  server  venv
+muzima@ubuntu:~/leave_system$ cd venv/
+muzima@ubuntu:~/leave_system/venv$ ls
+bin  include  lib  lib64  pyvenv.cfg
+muzima@ubuntu:~/leave_system/venv$ cd bin/
+muzima@ubuntu:~/leave_system/venv/bin$ ls
+python  python3
+muzima@ubuntu:~/leave_system/venv/bin$ cd ../
+muzima@ubuntu:~/leave_system/venv$ cd ../
+muzima@ubuntu:~/leave_system$ source venv/bin/activate
+-bash: venv/bin/activate: No such file or directory
+muzima@ubuntu:~/leave_system$ source venv/bin/cd ../
+-bash: venv/bin/cd: No such file or directory
+muzima@ubuntu:~/leave_system$ sudorm -r venv/
+sudorm: command not found
+muzima@ubuntu:~/leave_system$ sudo rm -r venv/
+muzima@ubuntu:~/leave_system$ ls
+client  server
+muzima@ubuntu:~/leave_system$ sudo apt update
+Get:1 http://security.ubuntu.com trusty-security InRelease [65.9 kB]
+Hit http://ppa.launchpad.net trusty InRelease                                  
+Ign http://us.archive.ubuntu.com trusty InRelease                              
+Hit http://ppa.launchpad.net trusty/main amd64 Packages                        
+Get:2 http://us.archive.ubuntu.com trusty-updates InRelease [65.9 kB]          
+Get:3 http://security.ubuntu.com trusty-security/main Sources [170 kB]         
+Hit http://ppa.launchpad.net trusty/main i386 Packages                         
+Get:4 http://security.ubuntu.com trusty-security/restricted Sources [4931 B]   
+Hit http://ppa.launchpad.net trusty/main Translation-en                        
+Get:5 http://security.ubuntu.com trusty-security/universe Sources [101 kB]
+Hit http://us.archive.ubuntu.com trusty-backports InRelease
+Hit http://us.archive.ubuntu.com trusty Release.gpg                            
+Get:6 http://us.archive.ubuntu.com trusty-updates/main Sources [427 kB]
+Get:7 http://security.ubuntu.com trusty-security/multiverse Sources [3264 B]
+Get:8 http://security.ubuntu.com trusty-security/main amd64 Packages [815 kB]
+Get:9 http://security.ubuntu.com trusty-security/restricted amd64 Packages [14.2 kB]
+Get:10 http://us.archive.ubuntu.com trusty-updates/restricted Sources [6322 B] 
+Get:11 http://security.ubuntu.com trusty-security/universe amd64 Packages [287 kB]
+Get:12 http://us.archive.ubuntu.com trusty-updates/universe Sources [231 kB]   
+Get:13 http://security.ubuntu.com trusty-security/multiverse amd64 Packages [4797 B]
+Get:14 http://us.archive.ubuntu.com trusty-updates/multiverse Sources [7433 B] 
+Get:15 http://security.ubuntu.com trusty-security/main i386 Packages [737 kB]  
+Get:16 http://us.archive.ubuntu.com trusty-updates/main amd64 Packages [1149 kB]
+Get:17 http://security.ubuntu.com trusty-security/restricted i386 Packages [13.9 kB]
+Get:18 http://security.ubuntu.com trusty-security/universe i386 Packages [272 kB]
+Get:19 http://security.ubuntu.com trusty-security/multiverse i386 Packages [4964 B]
+Hit http://security.ubuntu.com trusty-security/main Translation-en             
+Hit http://security.ubuntu.com trusty-security/multiverse Translation-en       
+Hit http://security.ubuntu.com trusty-security/restricted Translation-en       
+Hit http://security.ubuntu.com trusty-security/universe Translation-en         
+Get:20 http://us.archive.ubuntu.com trusty-updates/restricted amd64 Packages [17.2 kB]
+Get:21 http://us.archive.ubuntu.com trusty-updates/universe amd64 Packages [517 kB]
+Get:22 http://us.archive.ubuntu.com trusty-updates/multiverse amd64 Packages [14.6 kB]
+Get:23 http://us.archive.ubuntu.com trusty-updates/main i386 Packages [1072 kB]
+Get:24 http://us.archive.ubuntu.com trusty-updates/restricted i386 Packages [17.1 kB]
+Get:25 http://us.archive.ubuntu.com trusty-updates/universe i386 Packages [499 kB]
+Get:26 http://us.archive.ubuntu.com trusty-updates/multiverse i386 Packages [15.0 kB]
+Hit http://us.archive.ubuntu.com trusty-updates/main Translation-en            
+Hit http://us.archive.ubuntu.com trusty-updates/multiverse Translation-en      
+Hit http://us.archive.ubuntu.com trusty-updates/restricted Translation-en      
+Hit http://us.archive.ubuntu.com trusty-updates/universe Translation-en        
+Hit http://us.archive.ubuntu.com trusty-backports/main Sources                 
+Hit http://us.archive.ubuntu.com trusty-backports/restricted Sources           
+Hit http://us.archive.ubuntu.com trusty-backports/universe Sources             
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse Sources           
+Hit http://us.archive.ubuntu.com trusty-backports/main amd64 Packages          
+Hit http://us.archive.ubuntu.com trusty-backports/restricted amd64 Packages    
+Hit http://us.archive.ubuntu.com trusty-backports/universe amd64 Packages      
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse amd64 Packages    
+Hit http://us.archive.ubuntu.com trusty-backports/main i386 Packages           
+Hit http://us.archive.ubuntu.com trusty-backports/restricted i386 Packages     
+Hit http://us.archive.ubuntu.com trusty-backports/universe i386 Packages       
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse i386 Packages     
+Hit http://us.archive.ubuntu.com trusty-backports/main Translation-en          
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse Translation-en    
+Hit http://us.archive.ubuntu.com trusty-backports/restricted Translation-en    
+Hit http://us.archive.ubuntu.com trusty-backports/universe Translation-en      
+Hit http://us.archive.ubuntu.com trusty Release                                
+Hit http://us.archive.ubuntu.com trusty/main Sources                           
+Hit http://us.archive.ubuntu.com trusty/restricted Sources                     
+Hit http://us.archive.ubuntu.com trusty/universe Sources                       
+Hit http://us.archive.ubuntu.com trusty/multiverse Sources                     
+Hit http://us.archive.ubuntu.com trusty/main amd64 Packages                    
+Hit http://us.archive.ubuntu.com trusty/restricted amd64 Packages              
+Hit http://us.archive.ubuntu.com trusty/universe amd64 Packages                
+Hit http://us.archive.ubuntu.com trusty/multiverse amd64 Packages              
+Hit http://us.archive.ubuntu.com trusty/main i386 Packages                     
+Hit http://us.archive.ubuntu.com trusty/restricted i386 Packages               
+Hit http://us.archive.ubuntu.com trusty/universe i386 Packages                 
+Hit http://us.archive.ubuntu.com trusty/multiverse i386 Packages               
+Hit http://us.archive.ubuntu.com trusty/main Translation-en                    
+Hit http://us.archive.ubuntu.com trusty/multiverse Translation-en              
+Hit http://us.archive.ubuntu.com trusty/restricted Translation-en              
+Hit http://us.archive.ubuntu.com trusty/universe Translation-en                
+Fetched 6534 kB in 27s (235 kB/s)                                              
+Reading package lists... Done
+muzima@ubuntu:~/leave_system$ sudo apt install python3-pip
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+python3-pip is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 184 not upgraded.
+muzima@ubuntu:~/leave_system$ sudo apt install python3-dev
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+python3-dev is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 184 not upgraded.
+muzima@ubuntu:~/leave_system$ sudo apt install build-essential 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+build-essential is already the newest version.
+build-essential set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 184 not upgraded.
+muzima@ubuntu:~/leave_system$ sudo apt install libssl-dev
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+libssl-dev is already the newest version.
+libssl-dev set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 184 not upgraded.
+muzima@ubuntu:~/leave_system$ sudo apt install libffi-dev
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  libffi6
+The following NEW packages will be installed:
+  libffi-dev
+The following packages will be upgraded:
+  libffi6
+1 upgraded, 1 newly installed, 0 to remove and 183 not upgraded.
+Need to get 118 kB of archives.
+After this operation, 325 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main libffi6 amd64 3.1~rc1+r3.0.13-12ubuntu0.2 [17.9 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main libffi-dev amd64 3.1~rc1+r3.0.13-12ubuntu0.2 [100 kB]
+Fetched 118 kB in 1s (64.9 kB/s)     
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_TIME = "om_KE.UTF-8",
+	LC_MONETARY = "om_KE.UTF-8",
+	LC_ADDRESS = "om_KE.UTF-8",
+	LC_TELEPHONE = "om_KE.UTF-8",
+	LC_NAME = "om_KE.UTF-8",
+	LC_MEASUREMENT = "om_KE.UTF-8",
+	LC_IDENTIFICATION = "om_KE.UTF-8",
+	LC_NUMERIC = "om_KE.UTF-8",
+	LC_PAPER = "om_KE.UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+locale: Cannot set LC_ALL to default locale: No such file or directory
+(Reading database ... 69552 files and directories currently installed.)
+Preparing to unpack .../libffi6_3.1~rc1+r3.0.13-12ubuntu0.2_amd64.deb ...
+Unpacking libffi6:amd64 (3.1~rc1+r3.0.13-12ubuntu0.2) over (3.1~rc1+r3.0.13-12ubuntu0.1) ...
+Selecting previously unselected package libffi-dev:amd64.
+Preparing to unpack .../libffi-dev_3.1~rc1+r3.0.13-12ubuntu0.2_amd64.deb ...
+Unpacking libffi-dev:amd64 (3.1~rc1+r3.0.13-12ubuntu0.2) ...
+Processing triggers for install-info (5.2.0.dfsg.1-2) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up libffi6:amd64 (3.1~rc1+r3.0.13-12ubuntu0.2) ...
+Setting up libffi-dev:amd64 (3.1~rc1+r3.0.13-12ubuntu0.2) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.7) ...
+muzima@ubuntu:~/leave_system$ sudo apt install python3-setuptools
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+python3-setuptools is already the newest version.
+python3-setuptools set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 183 not upgraded.
+muzima@ubuntu:~/leave_system$ sudo apt  python3-venv
+E: Invalid operation python3-venv
+muzima@ubuntu:~/leave_system$ sudo apt install   python3-venv
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package python3-venv
+muzima@ubuntu:~/leave_system$ sudo apt-get install python3.5-venv
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+
+The following packages have unmet dependencies:
+ python3.5-venv : Depends: python-pip-whl (>= 8.1.0-2) but 1.5.4-1ubuntu4 is to be installed
+E: Unable to correct problems, you have held broken packages.
+muzima@ubuntu:~/leave_system$ sudo apt-get install python3.4-venv
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following NEW packages will be installed:
+  python3.4-venv
+0 upgraded, 1 newly installed, 0 to remove and 183 not upgraded.
+Need to get 6028 B of archives.
+After this operation, 57.3 kB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main python3.4-venv amd64 3.4.3-1ubuntu1~14.04.7 [6028 B]
+Fetched 6028 B in 0s (9075 B/s)         
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_TIME = "om_KE.UTF-8",
+	LC_MONETARY = "om_KE.UTF-8",
+	LC_ADDRESS = "om_KE.UTF-8",
+	LC_TELEPHONE = "om_KE.UTF-8",
+	LC_NAME = "om_KE.UTF-8",
+	LC_MEASUREMENT = "om_KE.UTF-8",
+	LC_IDENTIFICATION = "om_KE.UTF-8",
+	LC_NUMERIC = "om_KE.UTF-8",
+	LC_PAPER = "om_KE.UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+locale: Cannot set LC_ALL to default locale: No such file or directory
+Selecting previously unselected package python3.4-venv.
+(Reading database ... 69585 files and directories currently installed.)
+Preparing to unpack .../python3.4-venv_3.4.3-1ubuntu1~14.04.7_amd64.deb ...
+Unpacking python3.4-venv (3.4.3-1ubuntu1~14.04.7) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up python3.4-venv (3.4.3-1ubuntu1~14.04.7) ...
+muzima@ubuntu:~/leave_system$ python3 -m venv venvleave
+muzima@ubuntu:~/leave_system$ source venvleave/bin/activate
+(venvleave) muzima@ubuntu:~/leave_system$ cd server/
+(venvleave) muzima@ubuntu:~/leave_system/server$ sudo ufw allow 5000
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+(venvleave) muzima@ubuntu:~/leave_system/server$  python run.py
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/muzima/leave_system/server/routes/departments.py", line 1, in <module>
+    from  flask import flash, jsonify, request, session,g
+ImportError: No module named 'flask'
+(venvleave) muzima@ubuntu:~/leave_system/server$ pip install wheel
+Downloading/unpacking wheel
+  Downloading wheel-0.33.1-py2.py3-none-any.whl
+Installing collected packages: wheel
+Successfully installed wheel
+Cleaning up...
+(venvleave) muzima@ubuntu:~/leave_system/server$ pip install flask
+Downloading/unpacking flask
+  Downloading Flask-1.0.2-py2.py3-none-any.whl (91kB): 91kB downloaded
+Downloading/unpacking Jinja2>=2.10 (from flask)
+  Downloading Jinja2-2.10-py2.py3-none-any.whl (126kB): 126kB downloaded
+Downloading/unpacking Werkzeug>=0.14 (from flask)
+  Downloading Werkzeug-0.14.1-py2.py3-none-any.whl (322kB): 322kB downloaded
+Downloading/unpacking click>=5.1 (from flask)
+  Downloading Click-7.0-py2.py3-none-any.whl (81kB): 81kB downloaded
+Downloading/unpacking itsdangerous>=0.24 (from flask)
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl
+Downloading/unpacking MarkupSafe>=0.23 (from Jinja2>=2.10->flask)
+  Downloading MarkupSafe-1.1.1.tar.gz
+  Running setup.py (path:/home/muzima/leave_system/venvleave/build/MarkupSafe/setup.py) egg_info for package MarkupSafe
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'project_urls'
+      warnings.warn(msg)
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    no previously-included directories found matching 'docs/_build'
+    warning: no previously-included files matching '*.py[co]' found anywhere in distribution
+Installing collected packages: flask, Jinja2, Werkzeug, click, itsdangerous, MarkupSafe
+*** Error compiling '/home/muzima/leave_system/venvleave/build/Jinja2/jinja2/asyncfilters.py'...
+  File "/home/muzima/leave_system/venvleave/build/Jinja2/jinja2/asyncfilters.py", line 7
+    async def auto_to_seq(value):
+            ^
+SyntaxError: invalid syntax
+
+*** Error compiling '/home/muzima/leave_system/venvleave/build/Jinja2/jinja2/asyncsupport.py'...
+  File "/home/muzima/leave_system/venvleave/build/Jinja2/jinja2/asyncsupport.py", line 22
+    async def concat_async(async_gen):
+            ^
+SyntaxError: invalid syntax
+
+  Running setup.py install for MarkupSafe
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'project_urls'
+      warnings.warn(msg)
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    no previously-included directories found matching 'docs/_build'
+    warning: no previously-included files matching '*.py[co]' found anywhere in distribution
+    building 'markupsafe._speedups' extension
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -I/home/muzima/leave_system/venvleave/include -I/usr/include/python3.4m -c src/markupsafe/_speedups.c -o build/temp.linux-x86_64-3.4/src/markupsafe/_speedups.o
+    x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.4/src/markupsafe/_speedups.o -o build/lib.linux-x86_64-3.4/markupsafe/_speedups.cpython-34m.so
+Successfully installed flask Jinja2 Werkzeug click itsdangerous MarkupSafe
+Cleaning up...
+(venvleave) muzima@ubuntu:~/leave_system/server$ python run.py
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/muzima/leave_system/server/routes/departments.py", line 3, in <module>
+    from  initializer import db
+  File "/home/muzima/leave_system/server/initializer.py", line 18, in <module>
+    import pymysql
+ImportError: No module named 'pymysql'
+(venvleave) muzima@ubuntu:~/leave_system/server$ pip install pymysql
+Downloading/unpacking pymysql
+  Downloading PyMySQL-0.9.3-py2.py3-none-any.whl (47kB): 47kB downloaded
+Installing collected packages: pymysql
+Successfully installed pymysql
+Cleaning up...
+(venvleave) muzima@ubuntu:~/leave_system/server$ python run.py
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/muzima/leave_system/server/routes/departments.py", line 3, in <module>
+    from  initializer import db
+  File "/home/muzima/leave_system/server/initializer.py", line 20, in <module>
+    from flask_sqlalchemy import SQLAlchemy
+ImportError: No module named 'flask_sqlalchemy'
+(venvleave) muzima@ubuntu:~/leave_system/server$ pip install flask_sqlalchemy
+Downloading/unpacking flask-sqlalchemy
+  Downloading Flask_SQLAlchemy-2.3.2-py2.py3-none-any.whl
+Downloading/unpacking SQLAlchemy>=0.8.0 (from flask-sqlalchemy)
+  Downloading SQLAlchemy-1.3.1.tar.gz (5.9MB): 5.9MB downloaded
+  Running setup.py (path:/home/muzima/leave_system/venvleave/build/SQLAlchemy/setup.py) egg_info for package SQLAlchemy
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    warning: no files found matching 'sqla_nose.py'
+    no previously-included directories found matching 'doc/build/output'
+Requirement already satisfied (use --upgrade to upgrade): Flask>=0.10 in /home/muzima/leave_system/venvleave/lib/python3.4/site-packages (from flask-sqlalchemy)
+Installing collected packages: flask-sqlalchemy, SQLAlchemy
+  Running setup.py install for SQLAlchemy
+    building 'sqlalchemy.cprocessors' extension
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -I/home/muzima/leave_system/venvleave/include -I/usr/include/python3.4m -c lib/sqlalchemy/cextension/processors.c -o build/temp.linux-x86_64-3.4/lib/sqlalchemy/cextension/processors.o
+    x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.4/lib/sqlalchemy/cextension/processors.o -o build/lib.linux-x86_64-3.4/sqlalchemy/cprocessors.cpython-34m.so
+    building 'sqlalchemy.cresultproxy' extension
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -I/home/muzima/leave_system/venvleave/include -I/usr/include/python3.4m -c lib/sqlalchemy/cextension/resultproxy.c -o build/temp.linux-x86_64-3.4/lib/sqlalchemy/cextension/resultproxy.o
+    x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.4/lib/sqlalchemy/cextension/resultproxy.o -o build/lib.linux-x86_64-3.4/sqlalchemy/cresultproxy.cpython-34m.so
+    building 'sqlalchemy.cutils' extension
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -I/home/muzima/leave_system/venvleave/include -I/usr/include/python3.4m -c lib/sqlalchemy/cextension/utils.c -o build/temp.linux-x86_64-3.4/lib/sqlalchemy/cextension/utils.o
+    x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.4/lib/sqlalchemy/cextension/utils.o -o build/lib.linux-x86_64-3.4/sqlalchemy/cutils.cpython-34m.so
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    warning: no files found matching 'sqla_nose.py'
+    no previously-included directories found matching 'doc/build/output'
+Successfully installed flask-sqlalchemy SQLAlchemy
+Cleaning up...
+(venvleave) muzima@ubuntu:~/leave_system/server$ python run.py
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/muzima/leave_system/server/routes/departments.py", line 3, in <module>
+    from  initializer import db
+  File "/home/muzima/leave_system/server/initializer.py", line 21, in <module>
+    from flask_bcrypt import Bcrypt
+ImportError: No module named 'flask_bcrypt'
+(venvleave) muzima@ubuntu:~/leave_system/server$ pip install flask_bcrypt
+Downloading/unpacking flask-bcrypt
+  Downloading Flask-Bcrypt-0.7.1.tar.gz
+  Running setup.py (path:/home/muzima/leave_system/venvleave/build/flask-bcrypt/setup.py) egg_info for package flask-bcrypt
+    
+Requirement already satisfied (use --upgrade to upgrade): Flask in /home/muzima/leave_system/venvleave/lib/python3.4/site-packages (from flask-bcrypt)
+Downloading/unpacking bcrypt (from flask-bcrypt)
+  Downloading bcrypt-3.1.6.tar.gz (42kB): 42kB downloaded
+  Running setup.py (path:/home/muzima/leave_system/venvleave/build/bcrypt/setup.py) egg_info for package bcrypt
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    warning: no previously-included files found matching 'requirements.txt'
+    warning: no previously-included files found matching 'tasks.py'
+    warning: no previously-included files found matching '.travis.yml'
+    warning: no previously-included files found matching 'wheel-scripts'
+    warning: no previously-included files found matching 'Jenkinsfile'
+    warning: no previously-included files found matching '.jenkins'
+    warning: no previously-included files matching '*' found under directory '.jenkins'
+    warning: no previously-included files matching '*' found under directory 'wheel-scripts'
+    no previously-included directories found matching '.travis'
+Downloading/unpacking cffi>=1.1 (from bcrypt->flask-bcrypt)
+  Downloading cffi-1.12.2.tar.gz (453kB): 453kB downloaded
+  Running setup.py (path:/home/muzima/leave_system/venvleave/build/cffi/setup.py) egg_info for package cffi
+    
+Downloading/unpacking six>=1.4.1 (from bcrypt->flask-bcrypt)
+  Downloading six-1.12.0-py2.py3-none-any.whl
+Downloading/unpacking pycparser (from cffi>=1.1->bcrypt->flask-bcrypt)
+  Downloading pycparser-2.19.tar.gz (158kB): 158kB downloaded
+  Running setup.py (path:/home/muzima/leave_system/venvleave/build/pycparser/setup.py) egg_info for package pycparser
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    warning: no previously-included files found matching 'setup.pyc'
+    warning: no previously-included files matching 'yacctab.*' found under directory 'tests'
+    warning: no previously-included files matching 'lextab.*' found under directory 'tests'
+    warning: no previously-included files matching 'yacctab.*' found under directory 'examples'
+    warning: no previously-included files matching 'lextab.*' found under directory 'examples'
+Installing collected packages: flask-bcrypt, bcrypt, cffi, six, pycparser
+  Running setup.py install for flask-bcrypt
+    
+  Running setup.py install for bcrypt
+    
+    Installed /home/muzima/leave_system/venvleave/build/bcrypt/cffi-1.12.2-py3.4-linux-x86_64.egg
+    Searching for pycparser
+    Reading https://pypi.python.org/simple/pycparser/
+    Best match: pycparser 2.19
+    Downloading https://files.pythonhosted.org/packages/68/9e/49196946aee219aead1290e00d1e7fdeab8567783e83e1b9ab5585e6206a/pycparser-2.19.tar.gz#sha256=a988718abfad80b6b157acce7bf130a30876d27603738ac39f140993246b25b3
+    Processing pycparser-2.19.tar.gz
+    Writing /tmp/easy_install-qmgbr35m/pycparser-2.19/setup.cfg
+    Running pycparser-2.19/setup.py -q bdist_egg --dist-dir /tmp/easy_install-qmgbr35m/pycparser-2.19/egg-dist-tmp-4gz02k1r
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    warning: no previously-included files found matching 'setup.pyc'
+    warning: no previously-included files matching 'yacctab.*' found under directory 'tests'
+    warning: no previously-included files matching 'lextab.*' found under directory 'tests'
+    warning: no previously-included files matching 'yacctab.*' found under directory 'examples'
+    warning: no previously-included files matching 'lextab.*' found under directory 'examples'
+    zip_safe flag not set; analyzing archive contents...
+    pycparser.ply.__pycache__.ygen.cpython-34: module references __file__
+    pycparser.ply.__pycache__.yacc.cpython-34: module references __file__
+    pycparser.ply.__pycache__.yacc.cpython-34: module MAY be using inspect.getsourcefile
+    pycparser.ply.__pycache__.yacc.cpython-34: module MAY be using inspect.stack
+    pycparser.ply.__pycache__.lex.cpython-34: module references __file__
+    pycparser.ply.__pycache__.lex.cpython-34: module MAY be using inspect.getsourcefile
+    
+    Installed /home/muzima/leave_system/venvleave/build/bcrypt/pycparser-2.19-py3.4.egg
+    generating cffi module 'build/temp.linux-x86_64-3.4/_bcrypt.c'
+    building '_bcrypt' extension
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -Isrc/_csrc -I/home/muzima/leave_system/venvleave/include -I/usr/include/python3.4m -c build/temp.linux-x86_64-3.4/_bcrypt.c -o build/temp.linux-x86_64-3.4/build/temp.linux-x86_64-3.4/_bcrypt.o
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -Isrc/_csrc -I/home/muzima/leave_system/venvleave/include -I/usr/include/python3.4m -c src/_csrc/blf.c -o build/temp.linux-x86_64-3.4/src/_csrc/blf.o
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -Isrc/_csrc -I/home/muzima/leave_system/venvleave/include -I/usr/include/python3.4m -c src/_csrc/bcrypt.c -o build/temp.linux-x86_64-3.4/src/_csrc/bcrypt.o
+    src/_csrc/bcrypt.c: In function ‘decode_base64’:
+    src/_csrc/bcrypt.c:205:22: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+      const u_int8_t *p = b64data;
+                          ^
+    src/_csrc/bcrypt.c: In function ‘encode_base64’:
+    src/_csrc/bcrypt.c:247:17: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+      u_int8_t *bp = b64buffer;
+                     ^
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -Isrc/_csrc -I/home/muzima/leave_system/venvleave/include -I/usr/include/python3.4m -c src/_csrc/bcrypt_pbkdf.c -o build/temp.linux-x86_64-3.4/src/_csrc/bcrypt_pbkdf.o
+    In file included from src/_csrc/bcrypt_pbkdf.c:24:0:
+    src/_csrc/sha2.h:68:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__string__,2,3)));
+      ^
+    src/_csrc/sha2.h:70:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__minbytes__,1,SHA256_DIGEST_LENGTH)));
+      ^
+    src/_csrc/sha2.h:74:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__string__,2,3)));
+      ^
+    src/_csrc/sha2.h:76:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__minbytes__,1,SHA384_DIGEST_LENGTH)));
+      ^
+    src/_csrc/sha2.h:80:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__string__,2,3)));
+      ^
+    src/_csrc/sha2.h:82:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__minbytes__,1,SHA512_DIGEST_LENGTH)));
+      ^
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -Isrc/_csrc -I/home/muzima/leave_system/venvleave/include -I/usr/include/python3.4m -c src/_csrc/sha2.c -o build/temp.linux-x86_64-3.4/src/_csrc/sha2.o
+    In file included from src/_csrc/sha2.c:38:0:
+    src/_csrc/sha2.h:68:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__string__,2,3)));
+      ^
+    src/_csrc/sha2.h:70:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__minbytes__,1,SHA256_DIGEST_LENGTH)));
+      ^
+    src/_csrc/sha2.h:74:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__string__,2,3)));
+      ^
+    src/_csrc/sha2.h:76:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__minbytes__,1,SHA384_DIGEST_LENGTH)));
+      ^
+    src/_csrc/sha2.h:80:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__string__,2,3)));
+      ^
+    src/_csrc/sha2.h:82:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__minbytes__,1,SHA512_DIGEST_LENGTH)));
+      ^
+    src/_csrc/sha2.c: In function ‘SHA256Final’:
+    src/_csrc/sha2.c:475:2: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+      *(u_int64_t *)&context->buffer[SHA256_SHORT_BLOCK_LENGTH] = context->bitcount[0];
+      ^
+    src/_csrc/sha2.c: In function ‘SHA512Last’:
+    src/_csrc/sha2.c:751:2: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+      *(u_int64_t *)&context->buffer[SHA512_SHORT_BLOCK_LENGTH] = context->bitcount[1];
+      ^
+    src/_csrc/sha2.c:752:2: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+      *(u_int64_t *)&context->buffer[SHA512_SHORT_BLOCK_LENGTH+8] = context->bitcount[0];
+      ^
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -Isrc/_csrc -I/home/muzima/leave_system/venvleave/include -I/usr/include/python3.4m -c src/_csrc/timingsafe_bcmp.c -o build/temp.linux-x86_64-3.4/src/_csrc/timingsafe_bcmp.o
+    x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.4/build/temp.linux-x86_64-3.4/_bcrypt.o build/temp.linux-x86_64-3.4/src/_csrc/blf.o build/temp.linux-x86_64-3.4/src/_csrc/bcrypt.o build/temp.linux-x86_64-3.4/src/_csrc/bcrypt_pbkdf.o build/temp.linux-x86_64-3.4/src/_csrc/sha2.o build/temp.linux-x86_64-3.4/src/_csrc/timingsafe_bcmp.o -o build/lib.linux-x86_64-3.4/bcrypt/_bcrypt.cpython-34m.so
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    warning: no previously-included files found matching 'requirements.txt'
+    warning: no previously-included files found matching 'tasks.py'
+    warning: no previously-included files found matching '.travis.yml'
+    warning: no previously-included files found matching 'wheel-scripts'
+    warning: no previously-included files found matching 'Jenkinsfile'
+    warning: no previously-included files found matching '.jenkins'
+    warning: no previously-included files matching '*' found under directory '.jenkins'
+    warning: no previously-included files matching '*' found under directory 'wheel-scripts'
+    no previously-included directories found matching '.travis'
+  Running setup.py install for cffi
+    building '_cffi_backend' extension
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -DUSE__THREAD -DHAVE_SYNC_SYNCHRONIZE -I/usr/include/ffi -I/usr/include/libffi -I/home/muzima/leave_system/venvleave/include -I/usr/include/python3.4m -c c/_cffi_backend.c -o build/temp.linux-x86_64-3.4/c/_cffi_backend.o
+    x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.4/c/_cffi_backend.o -lffi -o build/lib.linux-x86_64-3.4/_cffi_backend.cpython-34m.so
+    
+  Running setup.py install for pycparser
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    warning: no previously-included files found matching 'setup.pyc'
+    warning: no previously-included files matching 'yacctab.*' found under directory 'tests'
+    warning: no previously-included files matching 'lextab.*' found under directory 'tests'
+    warning: no previously-included files matching 'yacctab.*' found under directory 'examples'
+    warning: no previously-included files matching 'lextab.*' found under directory 'examples'
+    Build the lexing/parsing tables
+Successfully installed flask-bcrypt bcrypt cffi six pycparser
+Cleaning up...
+(venvleave) muzima@ubuntu:~/leave_system/server$ python run.py
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/muzima/leave_system/server/routes/departments.py", line 3, in <module>
+    from  initializer import db
+  File "/home/muzima/leave_system/server/initializer.py", line 22, in <module>
+    from flask_cors import CORS
+ImportError: No module named 'flask_cors'
+(venvleave) muzima@ubuntu:~/leave_system/server$ pip install flask_cors
+Downloading/unpacking flask-cors
+  Downloading Flask_Cors-3.0.7-py2.py3-none-any.whl
+Requirement already satisfied (use --upgrade to upgrade): Flask>=0.9 in /home/muzima/leave_system/venvleave/lib/python3.4/site-packages (from flask-cors)
+Requirement already satisfied (use --upgrade to upgrade): Six in /home/muzima/leave_system/venvleave/lib/python3.4/site-packages (from flask-cors)
+Installing collected packages: flask-cors
+Successfully installed flask-cors
+Cleaning up...
+(venvleave) muzima@ubuntu:~/leave_system/server$ python run.py
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/muzima/leave_system/server/routes/departments.py", line 3, in <module>
+    from  initializer import db
+  File "/home/muzima/leave_system/server/initializer.py", line 24, in <module>
+    from flask_mail import Mail, Message
+ImportError: No module named 'flask_mail'
+(venvleave) muzima@ubuntu:~/leave_system/server$ pip install flask_mail
+Downloading/unpacking flask-mail
+  Downloading Flask-Mail-0.9.1.tar.gz (45kB): 45kB downloaded
+  Running setup.py (path:/home/muzima/leave_system/venvleave/build/flask-mail/setup.py) egg_info for package flask-mail
+    
+    warning: no previously-included files matching '*.pyc' found under directory 'docs'
+    warning: no previously-included files matching '*.pyo' found under directory 'docs'
+    no previously-included directories found matching 'docs/_build'
+    no previously-included directories found matching 'docs/_themes/.git'
+Requirement already satisfied (use --upgrade to upgrade): Flask in /home/muzima/leave_system/venvleave/lib/python3.4/site-packages (from flask-mail)
+Downloading/unpacking blinker (from flask-mail)
+  Downloading blinker-1.4.tar.gz (111kB): 111kB downloaded
+  Running setup.py (path:/home/muzima/leave_system/venvleave/build/blinker/setup.py) egg_info for package blinker
+    
+Installing collected packages: flask-mail, blinker
+  Running setup.py install for flask-mail
+    
+    warning: no previously-included files matching '*.pyc' found under directory 'docs'
+    warning: no previously-included files matching '*.pyo' found under directory 'docs'
+    no previously-included directories found matching 'docs/_build'
+    no previously-included directories found matching 'docs/_themes/.git'
+  Running setup.py install for blinker
+    
+Successfully installed flask-mail blinker
+Cleaning up...
+(venvleave) muzima@ubuntu:~/leave_system/server$ python run.py
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/muzima/leave_system/server/routes/departments.py", line 4, in <module>
+    from  models.models import *
+  File "/home/muzima/leave_system/server/models/models.py", line 7, in <module>
+    from flask_login import UserMixin, LoginManager
+ImportError: No module named 'flask_login'
+(venvleave) muzima@ubuntu:~/leave_system/server$ pip install flask_login
+Downloading/unpacking flask-login
+  Downloading Flask-Login-0.4.1.tar.gz
+  Running setup.py (path:/home/muzima/leave_system/venvleave/build/flask-login/setup.py) egg_info for package flask-login
+    
+Requirement already satisfied (use --upgrade to upgrade): Flask in /home/muzima/leave_system/venvleave/lib/python3.4/site-packages (from flask-login)
+Installing collected packages: flask-login
+  Running setup.py install for flask-login
+    
+Successfully installed flask-login
+Cleaning up...
+(venvleave) muzima@ubuntu:~/leave_system/server$ python run.py
+Traceback (most recent call last):
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/engine/base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/pool/base.py", line 354, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/pool/base.py", line 751, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/pool/base.py", line 483, in checkout
+    rec = pool._do_get()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/pool/impl.py", line 138, in _do_get
+    self._dec_overflow()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/util/compat.py", line 129, in reraise
+    raise value
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/pool/impl.py", line 135, in _do_get
+    return self._create_connection()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/pool/base.py", line 299, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/pool/base.py", line 428, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/pool/base.py", line 630, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/engine/default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pymysql/connections.py", line 599, in connect
+    self._request_authentication()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pymysql/connections.py", line 861, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/muzima/leave_system/server/routes/departments.py", line 4, in <module>
+    from  models.models import *
+  File "/home/muzima/leave_system/server/models/models.py", line 247, in <module>
+    db.create_all()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/flask_sqlalchemy/__init__.py", line 963, in create_all
+    self._execute_for_all_tables(app, bind, 'create_all')
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/flask_sqlalchemy/__init__.py", line 955, in _execute_for_all_tables
+    op(bind=self.get_engine(app, bind), **extra)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/sql/schema.py", line 4287, in create_all
+    ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/engine/base.py", line 2032, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/lib/python3.4/contextlib.py", line 59, in __enter__
+    return next(self.gen)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/engine/base.py", line 2024, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/engine/base.py", line 2226, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/engine/base.py", line 2266, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/engine/base.py", line 1536, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/util/compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/engine/base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/pool/base.py", line 354, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/pool/base.py", line 751, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/pool/base.py", line 483, in checkout
+    rec = pool._do_get()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/pool/impl.py", line 138, in _do_get
+    self._dec_overflow()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/util/compat.py", line 129, in reraise
+    raise value
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/pool/impl.py", line 135, in _do_get
+    return self._create_connection()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/pool/base.py", line 299, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/pool/base.py", line 428, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/pool/base.py", line 630, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/sqlalchemy/engine/default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pymysql/connections.py", line 599, in connect
+    self._request_authentication()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pymysql/connections.py", line 861, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: http://sqlalche.me/e/e3q8)
+(venvleave) muzima@ubuntu:~/leave_system/server$ mysql -u root -p
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+(venvleave) muzima@ubuntu:~/leave_system/server$ ls
+__init__.py  app.py  initializer.py  migrations  routes  test.py  wsgi.py
+__pycache__  auths   manage.py       models      run.py  uuid
+(venvleave) muzima@ubuntu:~/leave_system/server$ ls
+__init__.py  app.py  initializer.py  migrations  routes  test.py  wsgi.py
+__pycache__  auths   manage.py       models      run.py  uuid
+(venvleave) muzima@ubuntu:~/leave_system/server$ ls
+__init__.py  app.py  initializer.py  migrations  routes  test.py  wsgi.py
+__pycache__  auths   manage.py       models      run.py  uuid
+(venvleave) muzima@ubuntu:~/leave_system/server$ sudo nano initializer.py 
+[sudo] password for muzima: 
+Sorry, try again.
+[sudo] password for muzima: 
+(venvleave) muzima@ubuntu:~/leave_system/server$ python run.py
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/muzima/leave_system/server/routes/departments.py", line 6, in <module>
+    from auths.appAuth import *
+  File "/home/muzima/leave_system/server/auths/appAuth.py", line 10, in <module>
+    import jwt
+ImportError: No module named 'jwt'
+(venvleave) muzima@ubuntu:~/leave_system/server$ pip install jwt
+Downloading/unpacking jwt
+  Downloading jwt-0.6.1-py3-none-any.whl
+Cleaning up...
+Exception:
+Traceback (most recent call last):
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2482, in _dep_map
+    return self.__dep_map
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2344, in __getattr__
+    raise AttributeError(attr)
+AttributeError: _DistInfoDistribution__dep_map
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pip/basecommand.py", line 122, in main
+    status = self.run(options, args)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pip/commands/install.py", line 278, in run
+    requirement_set.prepare_files(finder, force_root_egg_info=self.bundle, bundle=self.bundle)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pip/req.py", line 1266, in prepare_files
+    req_to_install.extras):
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2291, in requires
+    dm = self._dep_map
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2484, in _dep_map
+    self.__dep_map = self._compute_dependencies()
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2508, in _compute_dependencies
+    parsed = next(parse_requirements(distvers))
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2605, in parse_requirements
+    line, p, specs = scan_list(VERSION,LINE_END,line,p,(1,2),"version spec")
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2583, in scan_list
+    "Expected ',' or end-of-list in",line,"at",line[p:]
+ValueError: ("Expected ',' or end-of-list in", 'cryptography <3.*,>=2.2.2', 'at', '*,>=2.2.2')
+
+Storing debug log for failure in /home/muzima/.pip/pip.log
+(venvleave) muzima@ubuntu:~/leave_system/server$ sudo pip install jwt
+sudo: pip: command not found
+(venvleave) muzima@ubuntu:~/leave_system/server$ pip install jwt
+Downloading/unpacking jwt
+  Downloading jwt-0.6.1-py3-none-any.whl
+Cleaning up...
+Exception:
+Traceback (most recent call last):
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2482, in _dep_map
+    return self.__dep_map
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2344, in __getattr__
+    raise AttributeError(attr)
+AttributeError: _DistInfoDistribution__dep_map
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pip/basecommand.py", line 122, in main
+    status = self.run(options, args)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pip/commands/install.py", line 278, in run
+    requirement_set.prepare_files(finder, force_root_egg_info=self.bundle, bundle=self.bundle)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pip/req.py", line 1266, in prepare_files
+    req_to_install.extras):
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2291, in requires
+    dm = self._dep_map
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2484, in _dep_map
+    self.__dep_map = self._compute_dependencies()
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2508, in _compute_dependencies
+    parsed = next(parse_requirements(distvers))
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2605, in parse_requirements
+    line, p, specs = scan_list(VERSION,LINE_END,line,p,(1,2),"version spec")
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2583, in scan_list
+    "Expected ',' or end-of-list in",line,"at",line[p:]
+ValueError: ("Expected ',' or end-of-list in", 'cryptography <3.*,>=2.2.2', 'at', '*,>=2.2.2')
+
+Storing debug log for failure in /home/muzima/.pip/pip.log
+(venvleave) muzima@ubuntu:~/leave_system/server$ pip install jwt
+Downloading/unpacking jwt
+  Downloading jwt-0.6.1-py3-none-any.whl
+Cleaning up...
+Exception:
+Traceback (most recent call last):
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2482, in _dep_map
+    return self.__dep_map
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2344, in __getattr__
+    raise AttributeError(attr)
+AttributeError: _DistInfoDistribution__dep_map
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pip/basecommand.py", line 122, in main
+    status = self.run(options, args)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pip/commands/install.py", line 278, in run
+    requirement_set.prepare_files(finder, force_root_egg_info=self.bundle, bundle=self.bundle)
+  File "/home/muzima/leave_system/venvleave/lib/python3.4/site-packages/pip/req.py", line 1266, in prepare_files
+    req_to_install.extras):
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2291, in requires
+    dm = self._dep_map
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2484, in _dep_map
+    self.__dep_map = self._compute_dependencies()
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2508, in _compute_dependencies
+    parsed = next(parse_requirements(distvers))
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2605, in parse_requirements
+    line, p, specs = scan_list(VERSION,LINE_END,line,p,(1,2),"version spec")
+  File "/home/muzima/leave_system/venvleave/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2583, in scan_list
+    "Expected ',' or end-of-list in",line,"at",line[p:]
+ValueError: ("Expected ',' or end-of-list in", 'cryptography <3.*,>=2.2.2', 'at', '*,>=2.2.2')
+
+Storing debug log for failure in /home/muzima/.pip/pip.log
+(venvleave) muzima@ubuntu:~/leave_system/server$ python run.py
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/muzima/leave_system/server/routes/departments.py", line 6, in <module>
+    from auths.appAuth import *
+  File "/home/muzima/leave_system/server/auths/appAuth.py", line 10, in <module>
+    import jwt
+ImportError: No module named 'jwt'
+(venvleave) muzima@ubuntu:~/leave_system/server$ pip install Flask-JWT
+Downloading/unpacking Flask-JWT
+  Downloading Flask-JWT-0.3.2.tar.gz
+  Running setup.py (path:/home/muzima/leave_system/venvleave/build/Flask-JWT/setup.py) egg_info for package Flask-JWT
+    
+    warning: no previously-included files matching '*' found under directory 'tests/__pycache__'
+Requirement already satisfied (use --upgrade to upgrade): Flask>=0.9 in /home/muzima/leave_system/venvleave/lib/python3.4/site-packages (from Flask-JWT)
+Downloading/unpacking PyJWT>=1.4.0,<1.5.0 (from Flask-JWT)
+  Downloading PyJWT-1.4.2-py2.py3-none-any.whl
+Installing collected packages: Flask-JWT, PyJWT
+  Running setup.py install for Flask-JWT
+    
+    warning: no previously-included files matching '*' found under directory 'tests/__pycache__'
+Successfully installed Flask-JWT PyJWT
+Cleaning up...
+(venvleave) muzima@ubuntu:~/leave_system/server$ python run.py
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 143-282-284
+ * Debugger is active!
+ * Debugger PIN: 156-150-528
+

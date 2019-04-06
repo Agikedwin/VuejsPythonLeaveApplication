@@ -1,0 +1,49 @@
+NODE AND NPM
+Step 1 – Add Node.js PPA
+Node.js package is available in LTS release and the current release. It’s your choice to select which version you want to install on the system as per your requirements. Let’s add the PPA to your system to install Nodejs on Ubuntu.
+
+Use Current Release: At te last update of this tutorial, Node.js 11.12.0 is the current Node.js release available.
+
+sudo apt-get install curl python-software-properties
+curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+Use LTS Release : At the last update of this tutorial, Node.js 10.15.3 is the LTS release available.
+
+sudo apt-get install curl python-software-properties
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+For this tutorial, I am using the latest current release and added their PPA to my system.
+
+Step 2 – Install Node.js on Ubuntu
+You can successfully add Node.js PPA to Ubuntu system. Now execute the below command install Node on and Ubuntu using apt-get. This will also installed NPM with node.js. This command also installs many other dependent packages on your system.
+
+sudo apt-get install nodejs
+
+
+VUE AND VUETIFY
+
+ npm install vue
+
+ npm install @vue/cli -g
+npm install -g @vue/cli
+
+vue create my-app
+$ cd my-app
+content_copy
+Tip: If you already have vue-cli installed, make sure you are on the latest version by typing vue --version into your cli.
+
+Now that you have an instantiated project, you can add the Vuetify package using the cli.
+
+$ vue add vuetify
+..
+..
+..
+
+(venvleave) muzima@ubuntu:/$ sudo service nginx restart
+
+at api url add port 5000(http://192.168.88.159:5000
+
+make sure (   uwsgi --socket 0.0.0.0:5000 --protocol=http -w run:app  ) is running
+
+maake sure you run ( sudo service systemctl start serverapi and sudo systemctl status serverapi)
+alway restart ngnix by running ( sudo service nginx restart)
+
+

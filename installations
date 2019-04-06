@@ -1,0 +1,219 @@
+https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/Python3_Flask.html
+
+https://docs.python.org/3.2/library/datetime.html
+
+https://stackabuse.com/single-page-apps-with-vue-js-and-flask-deployment/
+
+
+https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04
+
+
+VUEX LINK
+https://flaviocopes.com/vuex/
+
+Kill a port in use
+sudo kill `sudo lsof -t -i:9001`
+
+List Ports
+netstat -tulpn
+
+for multiple approvals , select the supervisor the let the supervisor escalate the leave to next level.
+
+sudo killall chrome
+
+sudo ufw status verbose
+
+sudo service nginx restart
+
+
+
+
+
+
+
+Dear Agik
+
+ 
+
+See below
+
+ 
+
+Tyoes of Leave
+
+ 
+
+Annual Leave -AN
+
+Maternity Leave - ML
+
+Paternity Leave - PL
+
+Public Holiday- PH
+
+Sick Leave -S
+
+Compassionate
+
+Study Leave
+
+ 
+
+List of leave approvers
+
+1.       Director
+
+2.       Deputy Director– Clinical
+
+3.       Deputy Director – SI
+
+4.       Deputy Director  - SSD
+
+5.       HR Manager
+
+6.       Coordinators
+
+7.       SCLARO
+
+ 
+
+CADRES
+
+1.       Director
+
+2.       Deputy Directors
+
+3.       TA
+
+4.       HR Manager
+
+5.       Coordinators
+
+6.       HR Assistant
+
+7.       Office Assistants
+
+8.       County Mentorship Lead
+
+9.       Clinical Program officer
+
+10.   Biostatistician
+
+11.   Data Analyst
+
+12.   MLE Officer
+
+13.   Accountant
+
+14.   Assistant MLE Manager
+
+15.   ICT Manager
+
+16.   Facility HTS Lead
+
+17.   Evaluation/STEP Assistant
+
+18.   VMMC Incharge
+
+19.   EIMC LEAD
+
+20.   VMMC EIMC Lead mobilizer
+
+21.   VMMC Mobilizers
+
+22.   Transport Manager
+
+23.   Drivers
+
+24.   Motorcycle riders
+
+25.   SCLARO
+
+26.   IRA
+
+27.   SC/ICT /EMR officer
+
+28.   ICT Assistant
+
+29.   PROGRAMMER
+
+30.   Assistant Programmer
+
+31.   SECURITY GUARD
+
+32.   SCMLE Officer
+
+33.   Executive Secretary
+
+
+
+..................................................................
+A Session object is basically an ongoing transaction of changes to a database (update, insert, delete). These operations aren't persisted to the database until they are committed (if your program aborts for some reason in mid-session transaction, any uncommitted changes within are lost).
+
+The session object registers transaction operations with session.add(), but doesn't yet communicate them to the database until session.flush() is called.
+
+session.flush() communicates a series of operations to the database (insert, update, delete). The database maintains them as pending operations in a transaction. The changes aren't persisted permanently to disk, or visible to other transactions until the database receives a COMMIT for the current transaction (which is what session.commit() does).
+
+session.commit() commits (persists) those changes to the database.
+
+flush() is always called as part of a call to commit() (1).
+
+When you use a Session object to query the database, the query will return results both from the database and from the flushed parts of the uncommitted transaction it holds. By default, Session objects autoflush their operations, but this can be disabled.
+
+DEPLOYMENY
+https://stackabuse.com/single-page-apps-with-vue-js-and-flask-deployment/
+
+
+
+
+/////////////////////////////////////////////////////////
+
+# You may add here your
+# server {
+#       ...
+# }
+# statements for each of your virtual hosts to this file
+
+##
+# You should look at the following URL's in order to grasp a solid understanding
+# of Nginx configuration files in order to fully unleash the power of Nginx.
+# http://wiki.nginx.org/Pitfalls
+# http://wiki.nginx.org/QuickStart
+# http://wiki.nginx.org/Configuration
+#
+# Generally, you will want to move this file somewhere, and start with a clean
+# file but keep this around for reference. Or just disable in sites-enabled.
+#
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+##
+
+server {
+        listen 22 ipv6only=off default_server;
+        listen 192.168.88.159:22  default_server ipv6only=off;
+
+        root /home/muzima/leave_system/client/dist;
+        index index.html index.htm;
+
+        # Make site accessible from http://localhost/
+        server_name localhost;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+                # Uncomment to enable naxsi on this location
+                # include /etc/nginx/naxsi.rules
+
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $http_host;
+    proxy_set_header X-NginX-Proxy true;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+    proxy_max_temp_file_size 0;
+ #   proxy_pass http://192.168.100.65:3000;
+    proxy_redirect off;
+   # proxy_read_timeout 240s;
+                                  
+
+

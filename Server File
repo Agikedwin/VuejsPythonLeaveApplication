@@ -1,0 +1,41 @@
+ serverapi.service
+
+
+[Unit]
+Description=uWSGI Python container server
+After=network.target
+
+[Service]
+User=muzima
+Group=www-data
+WorkingDirectory=/home/muzima/leave_system/server
+Environment="PATH=/home/muzima/leave_system/venvleave/bin"
+ExecStart=/home/muzima/leave_system/venvleave/bin/uwsgi --ini serverapi.ini
+
+[Install]
+WantedBy=multi-user.target
+
+
+Sites Available (leavesystem)
+
+server {
+    listen 80;
+    server_name 192.168.88.159;
+
+    location /api {
+        include uwsgi_params;
+        uwsgi_pass unix:/home/muzima/leave_system/server/serverapi.sock;
+    }
+
+  location / {
+    root /home/muzima/leave_system/client/dist;
+    try_files $uri $uri/ /index.html;
+  }
+}
+
+
+
+
+
+
+
