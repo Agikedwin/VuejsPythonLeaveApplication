@@ -1,116 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="abb3e5da-751c-48b4-9a30-71a4970aa298" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/leavev1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Diagrams/DFD.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Diagrams/ERD.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Diagrams/Use_Case.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Diagrams/Use_Case1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/img/icons/android-chrome-192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/img/icons/android-chrome-512x512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/img/icons/apple-touch-icon-120x120.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/img/icons/apple-touch-icon-152x152.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/img/icons/apple-touch-icon-180x180.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/img/icons/apple-touch-icon-60x60.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/img/icons/apple-touch-icon-76x76.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/img/icons/apple-touch-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/img/icons/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/img/icons/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/img/icons/msapplication-icon-144x144.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/img/icons/mstile-150x150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/img/icons/safari-pinned-tab.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/apis/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/assets/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/assets/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/components/HelloWorld.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/plugins/vuetify.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/registerServiceWorker.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/router.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/shims-tsx.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/shims-vue.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/utils/jwt.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/About.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/AddDetails.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/ApplicationHistory.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/AssignSupervisor.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/Department.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/DepartmentsList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/Designations.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/EmployeeList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/EmployeeSupervisor.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/EmployeesAssignedSupervisors.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/EmployeesLeaveApplications.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/Home.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/LeaveApplication.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/LeaveApprovals.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/LeaveBalance.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/LeaveTypes.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/Login.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/RegisterEmployees.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/Staff.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/views/backup.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/tests/unit/example.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/tslint.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/types/jwt-decode.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auths/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auths/appAuth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/initializer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/alembic.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/env.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/script.py.mako" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/versions/47c29d568087_.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/Cadre.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/EmployeeRegistration.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/Holidays.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/LeaveApplications.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/LeaveApproval.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/LeaveTypes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/Login.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/departments.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/general.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/testDate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uuid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../venv/lib64" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../venv/pip-selfcheck.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../venv/pyvenv.cfg" afterDir="false" />
-    </list>
+    <list default="true" id="abb3e5da-751c-48b4-9a30-71a4970aa298" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/EmployeeRegistration.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="341" column="37" selection-start-line="341" selection-start-column="37" selection-end-line="341" selection-end-column="37" />
+            <state relative-caret-position="-5254">
+              <caret line="357" column="51" lean-forward="true" selection-start-line="357" selection-start-column="51" selection-end-line="357" selection-end-column="51" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -134,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="234">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -146,7 +37,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/general.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
+            <state relative-caret-position="846">
               <caret line="50" column="81" selection-start-line="50" selection-start-column="81" selection-end-line="50" selection-end-column="81" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
@@ -158,7 +49,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/Login.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
+            <state relative-caret-position="792">
               <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
@@ -182,7 +73,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/LeaveApplications.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1367">
+            <state relative-caret-position="2052">
               <caret line="124" column="39" selection-start-line="124" selection-start-column="39" selection-end-line="124" selection-end-column="39" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
@@ -194,7 +85,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/initializer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
+            <state relative-caret-position="648">
               <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
               <folding>
                 <element signature="e#260#279#0" expanded="true" />
@@ -206,7 +97,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/Cadre.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
+            <state relative-caret-position="1674">
               <caret line="97" column="17" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
@@ -419,7 +310,7 @@
     <frame x="64" y="-4" width="1537" height="905" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18566775" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18566775" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -556,6 +447,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/EmployeeRegistration.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5254">
+          <caret line="357" column="51" lean-forward="true" selection-start-line="357" selection-start-column="51" selection-end-line="357" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/general.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="846">
+          <caret line="50" column="81" selection-start-line="50" selection-start-column="81" selection-end-line="50" selection-end-column="81" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/Login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/departments.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -566,30 +497,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/LeaveApproval.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/LeaveApplications.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1367">
+        <state relative-caret-position="2052">
           <caret line="124" column="39" selection-start-line="124" selection-start-column="39" selection-end-line="124" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/general.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="50" column="81" selection-start-line="50" selection-start-column="81" selection-end-line="50" selection-end-column="81" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
@@ -598,7 +509,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/initializer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
+        <state relative-caret-position="648">
           <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
           <folding>
             <element signature="e#260#279#0" expanded="true" />
@@ -606,19 +517,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/Cadre.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
+        <state relative-caret-position="1674">
           <caret line="97" column="17" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
@@ -626,20 +527,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/Login.py">
+    <entry file="file://$PROJECT_DIR$/routes/LeaveApproval.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/EmployeeRegistration.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="341" column="37" selection-start-line="341" selection-start-column="37" selection-end-line="341" selection-end-column="37" />
+        <state relative-caret-position="954">
+          <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>

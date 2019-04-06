@@ -129,7 +129,6 @@
     <v-flex xs12 sm5>
      <v-text-field
               disabled
-            :rules="nameRules"
             color="teal"
             label="Days Carried Forward "
             

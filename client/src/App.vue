@@ -232,7 +232,7 @@
       <v-footer color="teal" dark class="white--text">
         <span></span>
         <v-spacer></v-spacer>
-        <span>All rights preserved    &copy;Kemri-Faces2019    </span>
+        <span>All rights reserved    &copy;Kemri-Faces2019    </span>
       </v-footer>
     </template>
 
