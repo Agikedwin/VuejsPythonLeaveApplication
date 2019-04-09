@@ -202,10 +202,10 @@
               <v-icon class="teal--text">person</v-icon>
             </v-list-tile>
 
-            <v-list-tile class="portal_items" v-for="(crud, i) in cruds" :key="i" @click>
+            <v-list-tile class="portal_items" v-for="(port, i) in portal" :key="i" @click>
               <v-icon></v-icon>
-              <router-link class="white--text" :to="{ name: crud[1] }">
-                <v-list-tile-sub-title v-text="crud[0]" class="gray--text"></v-list-tile-sub-title>
+              <router-link class="white--text" :to="{ name: port[1] }">
+                <v-list-tile-sub-title v-text="port[0]" class="gray--text"></v-list-tile-sub-title>
               </router-link>
             </v-list-tile>
           </v-list>
@@ -367,7 +367,7 @@ export default {
       ["Approve/Decline Leave", "", "leaveApproval"]
     ],
 
-    cruds: [
+    portal: [
       ["Leave Balance", "leaveBalance"],
       ["Apply Leave", "leaveApplication"],
       ["Application History", "applicationHistory"]
@@ -474,6 +474,7 @@ export default {
 
     loginUser() {
       if(this.$refs.form.validate()){
+        console.log("THE ROUTES ::: ", this.$router)
         this.checkUserExists(this.LoginForm);
 
       }

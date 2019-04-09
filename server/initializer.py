@@ -43,8 +43,8 @@ mail = Mail(app)
 from werkzeug.debug import DebuggedApplication
 
 app.config['DEBUG'] = True
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:agik@localhost:3306/leave_system'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:test12@192.168.88.159:3306/leave_system'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:agik@localhost:3306/leave_system'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:test12@192.168.88.159:3306/leave_system'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = os.urandom(24)
 
