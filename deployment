@@ -24,3 +24,43 @@ sudo apt  install python3-pip
 sudo apt-get install python3.4-venv
 
 python3 -m venv venv(create the venv in server dir)
+
+sudo pip install flask-sqlalchemy
+
+sudo pip install Flask
+
+sudo pip install pmysql
+
+pip install flask-bcrypt
+
+
+Heh, yes I ran into the same problem myself today. Most of the issues are due to OS-level dependencies required by the cryptography module. I found that the following resolved all those dependencies for me (on Ubuntu 14.04 trusty 64 bit):
+
+$ sudo apt-get update
+
+$ sudo apt-get install libffi-dev g++ libssl-dev
+
+GRANT ALL PRIVILEGES ON leave_system.* TO 'root'@'41.89.200.55' IDENTIFIED BY 'test12' WITH GRANT OPTION;
+
+NGINX FILE::::::
+/etc/nginx/sites-available/leaveap
+
+start 9 walkers
+gunicorn -w 9 run:app (in server dir)
+
+INSTALL SUPERVISOR 
+
+sudo apt install supervisor 
+
+
+##########################MYSQL##########################
+Edit the /etc/mysql/my.cnf file with your favorite text editor after log in.
+sudo nano /etc/mysql/my.cnf      # On the server
+
+ 
+Search for the line bind-address and change it to 0.0.0.0 from 127.0.0.1, then save and exit the editor. Tip: Use the Ctrl + w shortcut with nano to easily find the line.
+Restart the mysql server, either with systemd or use the older service command.
+
+
+
+

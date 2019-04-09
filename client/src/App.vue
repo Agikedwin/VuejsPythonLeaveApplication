@@ -6,7 +6,7 @@
     <template v-if="login">
       <v-toolbar color="teal" dark fixed app clipped-right>
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-        <v-toolbar-title>KEMRI-FACES EMPLOYEES LEAVE AMANAGEMENT SYSTEM  </v-toolbar-title>
+        <v-toolbar-title>KEMRI-FACES EMPLOYEES LEAVE MANAGEMENT SYSTEM  </v-toolbar-title>
         <v-toolbar-items class="hidden-sm-and-down">
           <!-- <v-btn flat @click="goToDashboard">DASHBOARD</v-btn>
           <v-btn flat @click="goToStaff">STAFF</v-btn>
@@ -474,7 +474,6 @@ export default {
 
     loginUser() {
       if(this.$refs.form.validate()){
-        console.log("THE ROUTES ::: ", this.$router)
         this.checkUserExists(this.LoginForm);
 
       }
