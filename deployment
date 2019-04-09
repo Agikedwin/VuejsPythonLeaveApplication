@@ -7,3 +7,20 @@ DEPLOYMENT LINKS
 https://www.educba.com/mongodb-vs-sql-server/
 
 https://dzone.com/articles/why-mongodb
+
+
+### SERVER SETUP 
+
+UPGRADE:  apt updrade && update
+
+SET HOST NAME: set-hostname "hostname"
+
+HOSTNAME DIR : nano /etc/host
+
+PYTHON DEPS
+
+sudo apt  install python3-pip
+
+sudo apt-get install python3.4-venv
+
+python3 -m venv venv(create the venv in server dir)
