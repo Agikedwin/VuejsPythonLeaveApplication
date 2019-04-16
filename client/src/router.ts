@@ -29,57 +29,95 @@ import App from './App.vue'
 
 Vue.use(Router);
 
-export default new Router({
+const routerNav = new Router({
   routes: [
     {
       path: '/welcome',
       name: 'welcome',
-      component: App
+      component: App,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     {
       path: '/home',
       name: 'home',
       component: Home,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     {
       path: '/',
       name: 'leavetypebalances',
-      component: EmployeesLeaveBalance
+      component: EmployeesLeaveBalance,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     {
       path: '/level',
       name: 'level',
       component: Department,
+      meta: { 
+        requiresAuth: true
+    }
     },
     {
       path: '/register',
       name: 'register',
       component: RegisterEmployees,
+      meta: { 
+        requiresAuth: true
+    }
     },
     {
       path: '/designation',
       name: 'designation',
       component: Designations,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     {
       path: '/leaveType',
       name: 'leaveType',
       component: LeaveTypes,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     {
       path: '/employeeList',
       name: 'employeeList',
       component: EmployeeList,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     {
       path: '/addDetails',
       name: 'addDetails',
       component: AddDetails,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     {
       path: '/leaveApplication',
       name: 'leaveApplication',
-      component: LeaveApplication
+      component: LeaveApplication,
+      meta: { 
+        requiresAuth: true,
+        is_admin : false
+    }
 
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
@@ -89,75 +127,159 @@ export default new Router({
     {
       path: '/leaveApproval',
       name: 'leaveApproval',
-      component: LeaveApprovals
+      component: LeaveApprovals,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
 
     },
     {
       path: '/applicationHistory',
       name: 'applicationHistory',
-      component: ApplicationHistory
+      component: ApplicationHistory,
+      meta: { 
+        requiresAuth: true,
+        is_admin : false
+    }
     },
     {
       path: '/leaveBalance',
       name: 'leaveBalance',
-      component: LeaveBalance
+      component: LeaveBalance,
+      meta: { 
+        requiresAuth: true,
+        is_admin : false
+    }
     },
     {
       path: '/allapplications',
       name: 'allapplications',
-      component: EmployeesLeaveApplications
+      component: EmployeesLeaveApplications,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
 
     {
       path: '/assinsupervisor',
       name: 'assinsupervisor',
-      component: AssignSupervisor
+      component: AssignSupervisor,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     {
       path: '/employeesupervisor',
       name: 'employeesupervisor',
-      component: EmployeeSupervisor
+      component: EmployeeSupervisor,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     {
       path: '/staff',
       name: 'staff',
-      component: Staff
+      component: Staff,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     {
       path: '/assignedsupervisor',
       name: 'assignedsupervisor',
-      component: EmployeesAssignedSupervisors
+      component: EmployeesAssignedSupervisors,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     {
       path: '/supervisor',
       name: 'supervisor',
-      component: Supervisor
+      component: Supervisor,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     {
       path: '/holidays',
       name: 'holidays',
-      component: Holidays
+      component: Holidays,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     {
       path: '/initialleavebalance',
       name: 'initialleavebalance',
-      component: InitialLeaveBalances
+      component: InitialLeaveBalances,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     {
       path: '/employeeview',
       name: 'employeeview',
-      component: EmployeeView
+      component: EmployeeView,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     {
       path: '/leavetypebalances',
       name: 'leavetypebalances',
-      component: EmployeesLeaveBalance
+      component: EmployeesLeaveBalance,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     {
       path: '/changepassword',
       name: 'changepassword',
-      component: ChangePassword
+      component: ChangePassword,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
     },
     
   ],
+
+  
 });
+
+routerNav.beforeEach((to, from, next) => {
+ // only authenticated routes to be visited
+ let userDesignation: any;
+ userDesignation = localStorage.getItem('userSession');
+ // check if token is still valid
+ if(localStorage.getItem('tokenKey') != null){
+  //check if the route requested by admin adn desgnation is less than 6
+  if(to.matched.some(record => record.meta.is_admin)) {
+    if(userDesignation < 6) {
+      next();
+    }
+  }else {
+    // if the route is not for admin
+    if(!to.matched.some(record => record.meta.is_admin)){
+      next();
+    }
+
+  }
+}
+
+})
+
+export default routerNav 
+
+

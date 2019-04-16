@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/TR/REC-html40">
+<Worksheet ss:Name="Table1">
+	<Table>
+		<Column ss:Index="3" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="4" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="5" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="6" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="7" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="8" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="10" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="11" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="12" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="13" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="14" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="15" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="16" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="17" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="18" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="19" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="20" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="21" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="22" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="23" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="24" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="25" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="29" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="30" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="31" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="32" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="33" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="34" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="35" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="36" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="37" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Row>
+			<Cell><Data ss:Type="String">employee_id</Data></Cell>
+			<Cell><Data ss:Type="String">payroll_no</Data></Cell>
+			<Cell><Data ss:Type="String">surname</Data></Cell>
+			<Cell><Data ss:Type="String">other_names</Data></Cell>
+			<Cell><Data ss:Type="String">appointment_date</Data></Cell>
+			<Cell><Data ss:Type="String">designation</Data></Cell>
+			<Cell><Data ss:Type="String">dob</Data></Cell>
+			<Cell><Data ss:Type="String">entry_salary</Data></Cell>
+			<Cell><Data ss:Type="String">department_id</Data></Cell>
+			<Cell><Data ss:Type="String">program</Data></Cell>
+			<Cell><Data ss:Type="String">terms_of_service</Data></Cell>
+			<Cell><Data ss:Type="String">email</Data></Cell>
+			<Cell><Data ss:Type="String">phone_no</Data></Cell>
+			<Cell><Data ss:Type="String">birth_place</Data></Cell>
+			<Cell><Data ss:Type="String">nationalty</Data></Cell>
+			<Cell><Data ss:Type="String">passport_idno</Data></Cell>
+			<Cell><Data ss:Type="String">marital_status</Data></Cell>
+			<Cell><Data ss:Type="String">spause_name</Data></Cell>
+			<Cell><Data ss:Type="String">spause_idno</Data></Cell>
+			<Cell><Data ss:Type="String">kra_no</Data></Cell>
+			<Cell><Data ss:Type="String">nssf_no</Data></Cell>
+			<Cell><Data ss:Type="String">nhif_no</Data></Cell>
+			<Cell><Data ss:Type="String">bank_name</Data></Cell>
+			<Cell><Data ss:Type="String">branch</Data></Cell>
+			<Cell><Data ss:Type="String">account_no</Data></Cell>
+			<Cell><Data ss:Type="String">supervisor_status</Data></Cell>
+			<Cell><Data ss:Type="String">is_deleted</Data></Cell>
+			<Cell><Data ss:Type="String">userid</Data></Cell>
+			<Cell><Data ss:Type="String">editor</Data></Cell>
+			<Cell><Data ss:Type="String">date_created</Data></Cell>
+			<Cell><Data ss:Type="String">date_updated</Data></Cell>
+			<Cell><Data ss:Type="String">username</Data></Cell>
+			<Cell><Data ss:Type="String">password</Data></Cell>
+			<Cell><Data ss:Type="String">resev1</Data></Cell>
+			<Cell><Data ss:Type="String">presev12</Data></Cell>
+			<Cell><Data ss:Type="String">resev13</Data></Cell>
+			<Cell><Data ss:Type="String">presev14</Data></Cell>
+		</Row>
+
+		<Row>
+			<Cell><Data ss:Type="Number">1</Data></Cell>
+			<Cell><Data ss:Type="Number">10101</Data></Cell>
+			<Cell><Data ss:Type="String">Admin</Data></Cell>
+			<Cell><Data ss:Type="String">Leave System</Data></Cell>
+			<Cell><Data ss:Type="String">2004-12-01 00:00:00</Data></Cell>
+			<Cell><Data ss:Type="String">1</Data></Cell>
+			<Cell><Data ss:Type="String">2004-12-01 00:00:00</Data></Cell>
+			<Cell><Data ss:Type="String">500000</Data></Cell>
+			<Cell><Data ss:Type="Number">1</Data></Cell>
+			<Cell><Data ss:Type="String">Faces</Data></Cell>
+			<Cell><Data ss:Type="String">Permanent</Data></Cell>
+			<Cell><Data ss:Type="String">eagik@kemri-ucsf.org</Data></Cell>
+			<Cell><Data ss:Type="String">0780698944</Data></Cell>
+			<Cell><Data ss:Type="String">Mbita</Data></Cell>
+			<Cell><Data ss:Type="String">Kenyan</Data></Cell>
+			<Cell><Data ss:Type="String">27358109</Data></Cell>
+			<Cell><Data ss:Type="String">Single</Data></Cell>
+			<Cell><Data ss:Type="String">JK</Data></Cell>
+			<Cell><Data ss:Type="String">9090909</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="Number">0</Data></Cell>
+			<Cell><Data ss:Type="Number">0</Data></Cell>
+			<Cell><Data ss:Type="Number">1</Data></Cell>
+			<Cell><Data ss:Type="String">001</Data></Cell>
+			<Cell><Data ss:Type="String">2019-04-05 07:15:38</Data></Cell>
+			<Cell><Data ss:Type="String">2019-04-05 07:15:38</Data></Cell>
+			<Cell><Data ss:Type="String">LeaveAdmin@10101</Data></Cell>
+			<Cell><Data ss:Type="String">$2b$12$GVJGjdZRoOU8vre3Lzd6tOIFOXgs5RlbMSMC4OuwtzvWlPLhfWtdS</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">2</Data></Cell>
+			<Cell><Data ss:Type="Number">10102</Data></Cell>
+			<Cell><Data ss:Type="String">Ricky</Data></Cell>
+			<Cell><Data ss:Type="String">Sylus</Data></Cell>
+			<Cell><Data ss:Type="String">2021-05-14 00:00:00</Data></Cell>
+			<Cell><Data ss:Type="String">2</Data></Cell>
+			<Cell><Data ss:Type="String">2031-02-05 00:00:00</Data></Cell>
+			<Cell><Data ss:Type="String">450000</Data></Cell>
+			<Cell><Data ss:Type="Number">0</Data></Cell>
+			<Cell><Data ss:Type="String">Faces</Data></Cell>
+			<Cell><Data ss:Type="String">Contract</Data></Cell>
+			<Cell><Data ss:Type="String">rothiambo@kemri-ucsf.org</Data></Cell>
+			<Cell><Data ss:Type="String">0729103780</Data></Cell>
+			<Cell><Data ss:Type="String">Nyakach</Data></Cell>
+			<Cell><Data ss:Type="String">Kenyan</Data></Cell>
+			<Cell><Data ss:Type="String">10101010</Data></Cell>
+			<Cell><Data ss:Type="String">Married</Data></Cell>
+			<Cell><Data ss:Type="String">MJ</Data></Cell>
+			<Cell><Data ss:Type="String">70178990</Data></Cell>
+			<Cell><Data ss:Type="String">289087Y</Data></Cell>
+			<Cell><Data ss:Type="String">789008</Data></Cell>
+			<Cell><Data ss:Type="String">78990</Data></Cell>
+			<Cell><Data ss:Type="String">Cop</Data></Cell>
+			<Cell><Data ss:Type="String">kisumu</Data></Cell>
+			<Cell><Data ss:Type="String">20190900899</Data></Cell>
+			<Cell><Data ss:Type="Number">1</Data></Cell>
+			<Cell><Data ss:Type="Number">0</Data></Cell>
+			<Cell><Data ss:Type="Number">1</Data></Cell>
+			<Cell><Data ss:Type="String">001</Data></Cell>
+			<Cell><Data ss:Type="String">2019-04-05 02:40:11</Data></Cell>
+			<Cell><Data ss:Type="String">2019-04-05 02:40:11</Data></Cell>
+			<Cell><Data ss:Type="String">Leave@10102</Data></Cell>
+			<Cell><Data ss:Type="String">$2b$12$FLAqKSBhiIyBGZVexaLCouKgBWzv/CkAXLZ/LTny1w6jqDtPuFDNK</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">3</Data></Cell>
+			<Cell><Data ss:Type="Number">10103</Data></Cell>
+			<Cell><Data ss:Type="String">Dafrose</Data></Cell>
+			<Cell><Data ss:Type="String">Odoyo</Data></Cell>
+			<Cell><Data ss:Type="String">2021-05-14 00:00:00</Data></Cell>
+			<Cell><Data ss:Type="String">30</Data></Cell>
+			<Cell><Data ss:Type="String">2031-02-05 00:00:00</Data></Cell>
+			<Cell><Data ss:Type="String">250000</Data></Cell>
+			<Cell><Data ss:Type="Number">0</Data></Cell>
+			<Cell><Data ss:Type="String">Faces</Data></Cell>
+			<Cell><Data ss:Type="String">Contract</Data></Cell>
+			<Cell><Data ss:Type="String">rothiambo@kemri-ucsf.org</Data></Cell>
+			<Cell><Data ss:Type="String">0729103780</Data></Cell>
+			<Cell><Data ss:Type="String">Nyakach</Data></Cell>
+			<Cell><Data ss:Type="String">Kenyan</Data></Cell>
+			<Cell><Data ss:Type="String">10101010</Data></Cell>
+			<Cell><Data ss:Type="String">Married</Data></Cell>
+			<Cell><Data ss:Type="String">MJ</Data></Cell>
+			<Cell><Data ss:Type="String">70178990</Data></Cell>
+			<Cell><Data ss:Type="String">289087Y</Data></Cell>
+			<Cell><Data ss:Type="String">789008</Data></Cell>
+			<Cell><Data ss:Type="String">78990</Data></Cell>
+			<Cell><Data ss:Type="String">Cop</Data></Cell>
+			<Cell><Data ss:Type="String">kisumu</Data></Cell>
+			<Cell><Data ss:Type="String">20190900899</Data></Cell>
+			<Cell><Data ss:Type="Number">1</Data></Cell>
+			<Cell><Data ss:Type="Number">0</Data></Cell>
+			<Cell><Data ss:Type="Number">1</Data></Cell>
+			<Cell><Data ss:Type="String">001</Data></Cell>
+			<Cell><Data ss:Type="String">2019-04-05 02:40:11</Data></Cell>
+			<Cell><Data ss:Type="String">2019-04-05 02:40:11</Data></Cell>
+			<Cell><Data ss:Type="String">Leave@10103</Data></Cell>
+			<Cell><Data ss:Type="String">$2b$12$1k/tWT4lof76DEX46Ru1YuMlLLBo00JuzeAaZ7DZIXQQ7envUBC.m</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+		</Row>	</Table>
+</Worksheet>
+</Workbook>

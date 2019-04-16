@@ -8,6 +8,7 @@ import dev from '../config/dev'
 
 ////127.0.0.1:5000/api/ 
 //let url = 'http://192.168.88.159:5000/api/'
+//let url = 'http://41.89.200.55:5000/api/'
 let url = 'http://127.0.0.1:5000/api/'
 //let url = environ.API_URL;
 
@@ -142,12 +143,14 @@ export default {
                 console.log("LOGIN AT API ::::: ",res)                       
                 if (res.data.login_state == "Login successful") {
                     localStorage.removeItem('userSession')
+                    localStorage.removeItem('tokenKey');
                     data = res
+                    console.log("THE TESPONSE ", res.data)
                     const receivedToken = res.data.token;
                     console.log("At api 222 ", receivedToken)
                     localStorage.setItem('tokenKey', receivedToken);
                     axios.defaults.headers.common['Authorization'] = localStorage.getItem('tokenKey');
-                    localStorage.setItem('userSession', res.data.user_id);
+                    localStorage.setItem('userSession', res.data.user_details.designation);
                     console.log("AT LOGIN", localStorage.getItem('userSession'))
                 }  else if (res.data.login_state == "False"){
                     data = res.data.login_state;

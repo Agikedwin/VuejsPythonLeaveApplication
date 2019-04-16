@@ -13,6 +13,9 @@ export default {
             const data = JSON.parse(atob(jwt.split('.')[1]))
             const exp = new Date(data.exp * 1000) // JS deals with dates in milliseconds since epoch
             const now = new Date()
+
+            //console.log("the user Id exp ::::",exp )
+            //console.log("the user Id  now::::",now )
             //const decode_token = jwt_decode(jwt);
             //console.log("JWT TOKEN  :",decode_token)
             if (now < exp) {

@@ -22,9 +22,10 @@
               <v-text-field label="Others Names" :rules="nameRules" color="teal" v-model="registrationForm.other_names" required></v-text-field>
               <v-text-field
                 label="Employee Personal/Staff No"
+                type="number"
                 v-model="registrationForm.payroll_no"
                  color="teal"
-                 :rules="nameRules"
+                 :rules="payrollRule"
                 required
               ></v-text-field><div v-if="checkUnique"><span class="red--text">The payroll number already exists</span></div>
 
@@ -68,9 +69,10 @@
               ></v-select>
 
               <v-text-field
-                label="Current Salary Entry Point"
+                label=" Salary Entry Point"
                 v-model="registrationForm.entry_salary"
                 required
+                type="number"
                  color="teal"
                  :rules="nameRules"
               ></v-text-field>
@@ -119,6 +121,7 @@
               <v-text-field   color="teal" :rules="nameRules"  label="Nationalty" v-model="registrationForm.nationalty" required></v-text-field>
               <v-text-field
                 label="Passport/Id No"
+                type="number"
                 v-model="registrationForm.passport_idno"
                 required
                  color="teal"
@@ -133,10 +136,10 @@
                  color="teal"
                  :rules="nameRules"
               ></v-select>
-              <v-text-field  color="teal" :rules="nameRules" label="Phone Number" v-model="registrationForm.phone_no" required></v-text-field>
+              <v-text-field  color="teal" :rules="phoneRule" label="Phone Number" v-model="registrationForm.phone_no" required></v-text-field>
               <v-text-field   color="teal" :rules="emailRules"  label="Email Address" v-model="registrationForm.email" required></v-text-field>
               <v-text-field  color="teal" :rules="nameRules"  label="Spause Name" v-model="registrationForm.spause_name" required></v-text-field>
-              <v-text-field  color="teal" :rules="nameRules"  label="Spause's ID No" v-model="registrationForm.spause_idno" required></v-text-field>
+              <v-text-field  color="teal" type="number"  label="Spause's ID No" v-model="registrationForm.spause_idno" required></v-text-field>
 
               <v-btn flat @click.native="step = 1">Previous</v-btn>
               <v-btn class="teal--text" @click.native="stepNext3">Continue</v-btn>
@@ -146,10 +149,10 @@
             <v-stepper-content step="3">
                <v-form v-model="valid" ref="form3">
               <v-text-field  color="teal"  :rules="nameRules"  label="KRA Pin No" v-model="registrationForm.kra_no" required></v-text-field>
-              <v-text-field  color="teal"   label="NSSF No" v-model="registrationForm.nssf_no" required></v-text-field>
-              <v-text-field   color="teal" label="NHIF No" v-model="registrationForm.nhif_no" required></v-text-field>
+              <v-text-field  color="teal" type="number"  label="NSSF No" v-model="registrationForm.nssf_no" required></v-text-field>
+              <v-text-field   color="teal" type="number"  label="NHIF No" v-model="registrationForm.nhif_no" required></v-text-field>
               <v-text-field  color="teal"  label="Bank Name" v-model="registrationForm.bank_name" required></v-text-field>
-              <v-text-field   color="teal" label="Account No" v-model="registrationForm.account_no" required></v-text-field>
+              <v-text-field   color="teal" type="number"  label="Account No" v-model="registrationForm.account_no" required></v-text-field>
               <v-text-field   color="teal" label="Branch" v-model="registrationForm.branch" required></v-text-field>
 
               <v-btn flat @click.native="step = 2">Previous</v-btn>
@@ -157,7 +160,7 @@
                 <v-btn class="teal--text"   @click.prevent="submit">Save</v-btn>
               </span>
               <span v-if="progressBar">
-                <v-progress-circular  indeterminate  color="teal" class="teal"></v-progress-circular>saving...
+                <v-progress-circular  indeterminate  color="teal" ></v-progress-circular>saving...
               </span>
 
               
@@ -251,6 +254,12 @@ export default {
     ],
 
     lengthRules: [v => !!v || "You must provide "],
+    payrollRule:[v=>!!v || "Field required",
+                 v=> v.length == 5 || "The payroll number must be 5 characters"],
+    phoneRule: [ v => /(?=['+'].['0-9']).+$/.test(v) || "Phone number must start with + followed by country code ",
+                 v => !!v || "Field required",  
+                 v => v.length > 10 || "The digits must be more than 10 characters",              
+                ],
 
     emailRules: [
         v => !!v || 'E-mail is required',

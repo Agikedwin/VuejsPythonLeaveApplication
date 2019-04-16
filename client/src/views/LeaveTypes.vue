@@ -33,6 +33,7 @@
     <v-text-field label="Number of Days" 
                          v-model="leaveTypeForm.no_days"
                          color="teal"
+                         type="number"
                           :rules="nameRules"
                          required></v-text-field> 
     

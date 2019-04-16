@@ -4,7 +4,7 @@
      <div class="text-xs-center" v-if="progressBar">
     <v-progress-circular
       :size="50"
-      color="primary"
+      color="teal"
       indeterminate
     ></v-progress-circular>
     </div>

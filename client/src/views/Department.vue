@@ -58,6 +58,13 @@
 
     <v-flex>
       <v-card>
+        <div class="text-xs-center" v-if="progressBar">
+    <v-progress-circular
+      :size="50"
+      color="teal"
+      indeterminate
+    ></v-progress-circular>
+    </div>
         <v-card-title>
           <div>
             <h3>LIST LEVELS</h3>
@@ -189,6 +196,7 @@ export default {
     popupDialogfailed: false,
 
     confirmationDialog: false,
+    progressBar:true,
 
     valid: false,
     nameRules: [

@@ -1,5 +1,9 @@
 https://www.youtube.com/watch?v=goToXTC96Co
 
+USEFULL PYTHON LINUX PROBLEMS FIX LINK
+https://github.com/scrapy/scrapy/issues/2115
+https://stackoverflow.com/questions/26053982/setup-script-exited-with-error-command-x86-64-linux-gnu-gcc-failed-with-exit
+
 
 
 DEPLOYMENT LINKS 
@@ -50,7 +54,31 @@ gunicorn -w 9 run:app (in server dir)
 
 INSTALL SUPERVISOR 
 
-sudo apt install supervisor 
+sudo apt install supervisor
+
+
+ (flaskdeploy)$ sudo nano /etc/supervisor/conf.d/flaskdeploy.conf
+  
+
+  
+
+[program:flaskdeploy]
+command = /home/deploy/.virtualenvs/flaskdeploy/bin/gunicorn flaskdeploy:app -w 4
+directory = /home/deploy/sites/flaskdeploy
+user = deploy
+stdout_logfile = /home/deploy/sites/flaskdeploy/logs/gunicorn/gunicorn_stdout.log
+stderr_logfile = /home/deploy/sites/flaskdeploy/logs/gunicorn/gunicorn_stderr.log
+redirect_stderr = True
+environment = PRODUCTION=1
+  
+
+Now we have to tell supervisor about the update and restart.
+
+  
+
+    (flaskdeploy)$ sudo supervisorctl reread
+    (flaskdeploy)$ sudo supervisorctl update
+    (flaskdeploy)$ sudo supervisorctl start flaskdeploy 
 
 
 ##########################MYSQL##########################
@@ -61,6 +89,14 @@ sudo nano /etc/mysql/my.cnf      # On the server
 Search for the line bind-address and change it to 0.0.0.0 from 127.0.0.1, then save and exit the editor. Tip: Use the Ctrl + w shortcut with nano to easily find the line.
 Restart the mysql server, either with systemd or use the older service command.
 
+
+[program:leave_system]
+directory=/home/agik/hr/leave_system 
+command=/home/agik/hr/leave_system/server/.venv/bin/gunicorn run:app -b localho$
+autostart=true
+autorestart=true
+stderr_logfile=/var/log/leave_system/leave_system.err.log
+stdout_logfile=/var/log/leave_system/leave_system.out.log
 
 
 

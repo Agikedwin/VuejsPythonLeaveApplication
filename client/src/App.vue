@@ -304,6 +304,7 @@
 
 <script>
 import api from "@/apis/api";
+import tokenState from "@/utils/jwt";
 export default {
   data: () => ({
     
@@ -328,6 +329,7 @@ export default {
 
     
     progressBar:true,
+    loginWatcher:true,
     //progressLoading:true,
     fav: true,
       menu: false,
@@ -469,7 +471,12 @@ export default {
 
     },
     logoutUser(){
-      this.login=false
+
+     
+      this.loginWatcher = false;
+      
+      localStorage.removeItem('tokenKey');
+       this.login=false;
     },
 
     loginUser() {
@@ -500,15 +507,24 @@ export default {
     this.progressBar =true
   },
   created() {
-    console.log("HERE");
-    this.login = false;
-    this.progressBar=true
-    // state = api.checkBackendConn()
+   
+    /* setInterval(() => {     
+      this.login =true;
+     if(tokenState.isValidJwt(localStorage.getItem('tokenKey'))){
+       this.login =true;
+      console.log("HERE ***  ",tokenState.isValidJwt(localStorage.getItem('tokenKey')));
+
+        }else{
+          this.login =false;
+          console.log("HERE 11",tokenState.isValidJwt(localStorage.getItem('tokenKey')));
+
+        }}, 10000); */
   },
 
-  watch: {
-    //fp = new http_ping("www.linux.com.au")
-  },
+    watch: {
+   
+     
+  }
    
 };
 </script>

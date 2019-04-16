@@ -164,7 +164,7 @@ def auth(f):
 def gettoken(payroll_no):
     try:
         payload = {
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(days=1, seconds=20000),
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(days=0,minutes=0, seconds=5000),
             'iat': datetime.datetime.utcnow(),
             'sub': payroll_no
         }
@@ -179,6 +179,7 @@ def gettoken(payroll_no):
         return e
 
 def getUserId():
+
     #print("reached here AT GET LOGED")
     token = request.headers['Authorization']
     #print("THE TOKEN AT LOGIN ", token)

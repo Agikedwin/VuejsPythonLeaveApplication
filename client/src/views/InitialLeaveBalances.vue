@@ -46,7 +46,8 @@
             <v-divider></v-divider>
             <v-card-text >
                 <v-text-field
-                label="Leave days already taken"            
+                label="" 
+                type="number"           
                 v-model="balanceForm.leave_balance"
                 color="teal"
                 :rules="nameRules"
