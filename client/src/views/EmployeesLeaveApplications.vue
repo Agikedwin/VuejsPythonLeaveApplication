@@ -26,7 +26,7 @@
           <td class="text-xs-left">
             <v-tooltip bottom>
               <template v-slot:activator="{ on }">
-                <v-btn flat fab color="error" v-on="on">
+                <v-btn flat fab color="info" v-on="on">
                   <v-icon dark>event</v-icon>
                 </v-btn>
               </template>
@@ -50,7 +50,7 @@
           <td class="text-xs-left">
             <v-tooltip bottom>
               <template v-slot:activator="{ on }">
-                <v-btn flat fab color="info" v-on="on">
+                <v-btn flat fab color="error" v-on="on">
                   <v-icon dark>info</v-icon>
                 </v-btn>
               </template>

@@ -345,7 +345,7 @@ def leaveTypesHistory(payroll_no):
         mydays = leave.no_days
         remaining = loopLeaveTypesHistory(leave.leave_id,payroll_no)
         print("DAYS RETURNED " ,remaining)
-        percentage = remaining/mydays * 100
+        percentage = round(remaining/mydays * 100)
         data['per_remaining'] = percentage
         print("% REm ", percentage)
         diff = mydays -remaining

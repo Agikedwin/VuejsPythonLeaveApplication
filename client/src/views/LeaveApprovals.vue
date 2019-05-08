@@ -43,7 +43,7 @@
       <div class="text-xs-center">
         <v-dialog v-model="dialog" persistent width="500">
           <v-card>
-            <v-card-title class="headline grey lighten-2" primary-title>Approve Leave
+            <v-card-title class="headline grey " primary-title>Approve Leave
               <v-spacer></v-spacer>
               <v-btn icon dark @click="dialog = false">
                 <v-icon>close</v-icon>
@@ -55,17 +55,20 @@
               <v-flex xs12>
                 <v-textarea label="Provide A Note" 
                 :rules="noteRules"
+                color="teal"
                 v-model="approveForm.note" required></v-textarea>
               </v-flex>
               <v-flex xs12>
                 <v-checkbox
                   v-model="checkbox1"
+                  color="teal"
                   :label="`Am the final person to authorize this leave `"
                   @change="showApproving1"
                   
                 ></v-checkbox>
                 <v-checkbox
                   v-model="checkbox2"
+                  color="teal"
                   :label="`The leave requires next level of authorization `"
                   @change="showApproving2"
                   
@@ -78,7 +81,7 @@
                   :items="supervisorsList"
                   :filter="customFilter"
                   v-model="supervisor_id"
-                  color="gray"
+                  color="teal"
                   item-text="surname"
                   item-value="payroll_no"
                   clearable
@@ -91,7 +94,7 @@
 
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="primary" flat @click="submit('open')">Approve</v-btn>
+              <v-btn color="teal" flat @click="submit('open')">Submit</v-btn>
             </v-card-actions>
           </v-card>
         </v-dialog>
@@ -173,14 +176,17 @@
 
       <v-card>
         <v-card-title
-          class="headline grey lighten-2"
-          primary-title
+          class="headline grey " 
         >
-          Privacy Policy
+          Decline Leave Application
+          <v-spacer></v-spacer>
+              <v-btn icon dark @click="declineDialog = false">
+                <v-icon>close</v-icon>
+              </v-btn>
         </v-card-title>
 
         <v-card-text>
-          <v-textarea v-model="approveForm.note" ></v-textarea>
+          <v-textarea v-model="approveForm.note" color="teal"></v-textarea>
         </v-card-text>
 
         <v-divider></v-divider>
@@ -188,14 +194,14 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            color="primary"
+            color="teal"
             flat
             @click="submit('decline_canceal')"
           >
             Canceal
           </v-btn>
           <v-btn
-            color="primary"
+            color="teal"
             flat
             @click="submit('decline_submit')"
           >
@@ -238,7 +244,7 @@ export default {
       approveForm: {
         approval_id: "",
         application_id: 0,
-        payroll_no: localStorage.getItem("userSession"),
+        payroll_no: localStorage.getItem("userSessionPayroll"),
         leave_status: "",
         nextPersonToApprove: 0,
         note: ""

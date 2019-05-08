@@ -235,7 +235,7 @@ export default {
       leave_type: "",
       leave_id: 0,
       available: "",
-      payroll_no: localStorage.getItem("userSession"),
+      payroll_no: localStorage.getItem("userSessionPayroll"),
       date_from: "",
       date_to: "",
       no_days: "",
@@ -406,7 +406,7 @@ export default {
     console.log("PAYROLL NO LOCAL STORAGE ",localStorage.getItem("userSession"))
     this.getLeaveTypes();
     this.fetchEmployees();
-    this.getEmpSupervisorAssigned()
+   //this.getEmpSupervisorAssigned()
   },
   watch: {
     popupDialog(val) {

@@ -8,14 +8,14 @@ import dev from '../config/dev'
 
 ////127.0.0.1:5000/api/ 
 //let url = 'http://192.168.88.159:5000/api/'
-//let url = 'http://41.89.200.55:5000/api/'
+//let url = 'http://41.89.200.55/api/'
 let url = 'http://127.0.0.1:5000/api/'
 //let url = environ.API_URL;
 
 //const API_URL = process.env.API_URL
 //let URL1 = process.env.API_URL
 
-console.log("THE TEST ENVIRON::::::",environ.API_URL)
+//console.log("THE TEST ENVIRON::::::",environ.API_URL)
 
 
 axios.defaults.headers.common["Access-Control-Allow-Origin"] = "23456agik" // for all requests
@@ -144,14 +144,16 @@ export default {
                 if (res.data.login_state == "Login successful") {
                     localStorage.removeItem('userSession')
                     localStorage.removeItem('tokenKey');
+                    localStorage.removeItem('userSessionPayroll');
                     data = res
                     console.log("THE TESPONSE ", res.data)
                     const receivedToken = res.data.token;
                     console.log("At api 222 ", receivedToken)
-                    localStorage.setItem('tokenKey', receivedToken);
+                    localStorage.setItem('tokenKey', receivedToken); 
                     axios.defaults.headers.common['Authorization'] = localStorage.getItem('tokenKey');
                     localStorage.setItem('userSession', res.data.user_details.designation);
-                    console.log("AT LOGIN", localStorage.getItem('userSession'))
+                    localStorage.setItem('userSessionPayroll', res.data.user_details.payroll_no);
+                    console.log("AT LOGIN ::::::::::::::*********", localStorage.getItem('userSession'))
                 }  else if (res.data.login_state == "False"){
                     data = res.data.login_state;
 

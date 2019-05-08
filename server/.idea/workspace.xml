@@ -4,18 +4,10 @@
     <list default="true" id="abb3e5da-751c-48b4-9a30-71a4970aa298" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/apis/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/apis/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/utils/jwt.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/utils/jwt.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/views/ApplicationHistory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/views/ApplicationHistory.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/views/Department.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/views/Department.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/views/InitialLeaveBalances.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/views/InitialLeaveBalances.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/views/LeaveTypes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/views/LeaveTypes.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/views/RegisterEmployees.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/views/RegisterEmployees.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../deployment" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../documentation/.~lock.Slide_word.odt#" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/initializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/initializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/general.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/general.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/general.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="846">
-              <caret line="50" column="81" selection-start-line="50" selection-start-column="81" selection-end-line="50" selection-end-column="81" />
+            <state relative-caret-position="148">
+              <caret line="347" column="26" selection-start-line="347" selection-start-column="21" selection-end-line="347" selection-end-column="26" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -64,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/Login.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2934">
-              <caret line="175" selection-start-line="175" selection-end-line="175" />
+            <state relative-caret-position="204">
+              <caret line="256" column="17" selection-start-line="256" selection-start-column="4" selection-end-line="256" selection-end-column="17" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -88,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/LeaveApplications.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2052">
-              <caret line="124" column="39" selection-start-line="124" selection-start-column="39" selection-end-line="124" selection-end-column="39" />
+            <state relative-caret-position="145">
+              <caret line="121" column="27" lean-forward="true" selection-start-line="121" selection-start-column="27" selection-end-line="121" selection-end-column="27" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -97,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/initializer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="46" column="1" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
+            <state relative-caret-position="172">
+              <caret line="39" column="16" lean-forward="true" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
               <folding>
                 <element signature="e#260#279#0" expanded="true" />
               </folding>
@@ -156,8 +148,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sendCredentials</find>
-      <find>addReliever</find>
       <find>userPayroll</find>
       <find>gettoken</find>
       <find>getLeaveApplicationsHistory</find>
@@ -172,7 +162,6 @@
       <find>getSupervisorEmp</find>
       <find>removeEmpFromEmpTable</find>
       <find>supervisorState</find>
-      <find>checkSupExist</find>
       <find>pw_hash</find>
       <find>getUserId</find>
       <find>addApprovals</find>
@@ -186,6 +175,9 @@
       <find>getSingleCadre</find>
       <find>allSupervisors</find>
       <find>.designation&lt;</find>
+      <find>leaveTypesHistory</find>
+      <find>checkSupExist</find>
+      <find>leaveHistory</find>
     </findStrings>
     <replaceStrings>
       <replace>@app.route('api/</replace>
@@ -209,11 +201,11 @@
         <option value="$PROJECT_DIR$/routes/LeaveApproval.py" />
         <option value="$PROJECT_DIR$/routes/Cadre.py" />
         <option value="$PROJECT_DIR$/models/models.py" />
-        <option value="$PROJECT_DIR$/routes/general.py" />
         <option value="$PROJECT_DIR$/routes/EmployeeRegistration.py" />
         <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/routes/Login.py" />
         <option value="$PROJECT_DIR$/initializer.py" />
+        <option value="$PROJECT_DIR$/routes/general.py" />
       </list>
     </option>
   </component>
@@ -335,14 +327,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-4" width="1537" height="905" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18566775" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32917705" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3895631" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.69902915" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.19700748" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -484,42 +475,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/general.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="50" column="81" selection-start-line="50" selection-start-column="81" selection-end-line="50" selection-end-column="81" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/Login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2934">
-          <caret line="175" selection-start-line="175" selection-end-line="175" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/departments.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="16" column="47" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="50" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/LeaveApplications.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2052">
-          <caret line="124" column="39" selection-start-line="124" selection-start-column="39" selection-end-line="124" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -556,10 +517,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/initializer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="46" column="1" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
+        <state relative-caret-position="172">
+          <caret line="39" column="16" lean-forward="true" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
           <folding>
             <element signature="e#260#279#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/Login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="256" column="17" selection-start-line="256" selection-start-column="4" selection-end-line="256" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/LeaveApplications.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="121" column="27" lean-forward="true" selection-start-line="121" selection-start-column="27" selection-end-line="121" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/general.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="347" column="26" selection-start-line="347" selection-start-column="21" selection-end-line="347" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>

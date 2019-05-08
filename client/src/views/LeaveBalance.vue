@@ -70,6 +70,7 @@ import api from '../apis/api'
             await api.getEntries('leaveHistory')
             .then(empList =>{
               this.employeeList = empList
+              console.log("THIS IS TEST ::: ", this.employeeList)
               this.progressBar=false
              /*  for(var i=0;i<empList.length;i++){
                 empList[i].days = empList[i].leave_balance

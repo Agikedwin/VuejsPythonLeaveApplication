@@ -1,9 +1,6 @@
 <template>
   <v-app id="inspire">
-
-    
-   
-    <template v-if="login">
+<template v-if="login">
       <v-toolbar color="teal" dark fixed app clipped-right>
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         <v-toolbar-title>KEMRI-FACES EMPLOYEES LEAVE MANAGEMENT SYSTEM  </v-toolbar-title>
@@ -110,7 +107,7 @@
      
       </v-toolbar>
 
-      <v-navigation-drawer v-model="drawer" fixed app>
+      <v-navigation-drawer v-model="drawer"  fixed app>
         <v-list>
           <v-list-tile>
             <v-list-tile-avatar>
@@ -291,12 +288,12 @@
         </v-container>
       </v-content>
     </template>
-    <template>
+    <!-- <template>
        <div class="text-xs-center" v-if="progressLoading">
       <v-progress-circular :size="50" color="teal" indeterminate></v-progress-circular>
     </div>
       
-    </template>
+    </template> -->
     
    
   </v-app>
