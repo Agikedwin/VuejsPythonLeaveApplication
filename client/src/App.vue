@@ -372,12 +372,12 @@ export default {
       ["Leave Balances", "", "leavetypebalances"],
       ["Leave Applications History", "", "allapplications"],
       ["Approve/Decline Leave", "", "leaveApproval"],
-      ["Accumulated Days", "" ,"accumulatedLeaveDays"],
+      /* ["Accumulated Days", "" ,"accumulatedLeaveDays"], */
     ],
 
     portal: [
-      ["Leave Balance", "leaveBalance"],
-      ["Accumulated Days", "accumulatedLeaveDays"],
+      ["Leave Balance", "leaveBalance"],/* 
+      ["Accumulated Days", "accumulatedLeaveDays"], */
       ["Apply Leave", "leaveApplication"],
       ["Application History", "applicationHistory"],
       

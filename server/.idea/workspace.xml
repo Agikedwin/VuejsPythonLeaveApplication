@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abb3e5da-751c-48b4-9a30-71a4970aa298" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/AccumulatedAnnualLeavedays.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/apis/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/apis/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/views/LeaveApplication.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/views/LeaveApplication.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/views/LeaveBalance.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/views/LeaveBalance.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/general.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/general.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/../venv/pip-selfcheck.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -258,12 +248,12 @@
     <frame x="64" y="-4" width="1537" height="905" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18566775" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18566775" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32917705" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23058252" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23058252" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.19700748" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
