@@ -23,6 +23,7 @@ import EmployeeView  from './views/EmployeeView.vue'
 import EmployeesLeaveBalance from './views/EmployeesLeaveBalance.vue'
 import ChangePassword from './views/ChangePassword.vue'
 import App from './App.vue'
+import AccumulatedLeaveDays from './views/AccumulatedLeaveDays.vue'
 
 
 
@@ -244,6 +245,15 @@ const routerNav = new Router({
     }
     },
     {
+      path: '/accumulatedLeaveDays',
+      name: 'accumulatedLeaveDays',
+      component: AccumulatedLeaveDays,
+      meta: { 
+        requiresAuth: true,
+        is_admin : true
+    }
+    },
+    {
       path: '/changepassword',
       name: 'changepassword',
       component: ChangePassword,
@@ -252,6 +262,8 @@ const routerNav = new Router({
         is_admin : true
     }
     },
+
+    
     
   ],
 

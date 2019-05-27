@@ -10,6 +10,7 @@ import uuid
 from functools import update_wrapper, wraps
 import jwt
 import datetime
+from routes.AccumulatedAnnualLeavedays import getAccumulatedLeavedays
 from routes.testDate import testSession
 
 
@@ -53,12 +54,13 @@ def getUser():
             if supervisorState is True:
                 genToken = gettoken(userExists.password)
                 session['username'] = userExists.username
+                accruedLeaveDays = getAccumulatedLeavedays(userExists.payroll_no)
                 session.permanent = True
                 response_msg = {'login_state':"Login successful", 'token':genToken,'user_id':userExists.payroll_no,
                                 'user_details':{'designation':userExists.designation,'payroll_no':userExists.payroll_no,
                                 'other_names':userExists.other_names,'surname':userExists.surname,
                                 'username':userExists.username,'appointment_date':userExists.appointment_date.strftime("%Y-%m-%d"),
-                                'department_id':userExists.department_id}}
+                                'department_id':userExists.department_id,'accruedLeaveDays':accruedLeaveDays}}
                 insertUserActivities(genToken)
                 #return jsonify(response_msg)
             else:

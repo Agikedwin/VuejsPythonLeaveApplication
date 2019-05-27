@@ -1,0 +1,768 @@
+https://www.youtube.com/watch?v=goToXTC96Co
+
+
+
+gik@ODK-SERVER:~/hr/leave_system/server$ python3.4  venv venv
+python3.4: can't open file 'venv': [Errno 2] No such file or directory
+agik@ODK-SERVER:~/hr/leave_system/server$ sudo apt install -y python3.4-venv
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+python3.4-venv is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 165 not upgraded.
+agik@ODK-SERVER:~/hr/leave_system/server$ python3.4 -m venv venv
+agik@ODK-SERVER:~/hr/leave_system/server$ ls
+__init__.py  __pycache__  app.py  auths  initializer.py  manage.py  migrations  models  requirements.txt  routes  run.py  test.py  textit  uuid  venv  wsgi.py
+agik@ODK-SERVER:~/hr/leave_system/server$ cd venv/
+agik@ODK-SERVER:~/hr/leave_system/server/venv$ ls
+bin  include  lib  lib64  pyvenv.cfg
+agik@ODK-SERVER:~/hr/leave_system/server/venv$ cd bin/
+agik@ODK-SERVER:~/hr/leave_system/server/venv/bin$ ls
+activate  activate.csh  activate.fish  easy_install  easy_install-3.4  pip  pip3  pip3.4  python  python3  python3.4
+agik@ODK-SERVER:~/hr/leave_system/server/venv/bin$ cd ../../
+agik@ODK-SERVER:~/hr/leave_system/server$ source venv/bin/activate
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ pip install gunicorn
+Downloading/unpacking gunicorn
+  Downloading gunicorn-19.9.0-py2.py3-none-any.whl (112kB): 112kB downloaded
+Installing collected packages: gunicorn
+Successfully installed gunicorn
+Cleaning up...
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ cd venv/bin/
+(venv) agik@ODK-SERVER:~/hr/leave_system/server/venv/bin$ cd ../
+(venv) agik@ODK-SERVER:~/hr/leave_system/server/venv$ cd ../
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ nproc --all
+4
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ clear
+
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ gunicorn -w 9 run:app
+[2019-05-15 11:39:27 +0300] [2516] [INFO] Starting gunicorn 19.9.0
+[2019-05-15 11:39:27 +0300] [2516] [INFO] Listening at: http://127.0.0.1:8000 (2516)
+[2019-05-15 11:39:27 +0300] [2516] [INFO] Using worker: sync
+[2019-05-15 11:39:27 +0300] [2519] [INFO] Booting worker with pid: 2519
+[2019-05-15 11:39:27 +0300] [2519] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/home/agik/hr/leave_system/server/run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/agik/hr/leave_system/server/routes/departments.py", line 1, in <module>
+    from  flask import flash, jsonify, request, session,g
+ImportError: No module named 'flask'
+[2019-05-15 11:39:27 +0300] [2519] [INFO] Worker exiting (pid: 2519)
+[2019-05-15 11:39:27 +0300] [2520] [INFO] Booting worker with pid: 2520
+[2019-05-15 11:39:27 +0300] [2520] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/home/agik/hr/leave_system/server/run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/agik/hr/leave_system/server/routes/departments.py", line 1, in <module>
+    from  flask import flash, jsonify, request, session,g
+ImportError: No module named 'flask'
+[2019-05-15 11:39:27 +0300] [2520] [INFO] Worker exiting (pid: 2520)
+[2019-05-15 11:39:27 +0300] [2521] [INFO] Booting worker with pid: 2521
+[2019-05-15 11:39:27 +0300] [2521] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/home/agik/hr/leave_system/server/run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/agik/hr/leave_system/server/routes/departments.py", line 1, in <module>
+    from  flask import flash, jsonify, request, session,g
+ImportError: No module named 'flask'
+[2019-05-15 11:39:27 +0300] [2521] [INFO] Worker exiting (pid: 2521)
+Traceback (most recent call last):
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 203, in run
+    self.manage_workers()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 545, in manage_workers
+    self.spawn_workers()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 617, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+    self.reap_workers()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/agik/hr/leave_system/server/venv/bin/gunicorn", line 11, in <module>
+    sys.exit(run())
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 61, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/base.py", line 223, in run
+    super(Application, self).run()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 232, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 345, in halt
+    self.stop()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 393, in stop
+    time.sleep(0.1)
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+    self.reap_workers()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ python run.py 
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/agik/hr/leave_system/server/routes/departments.py", line 1, in <module>
+    from  flask import flash, jsonify, request, session,g
+ImportError: No module named 'flask'
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ pip install flask
+Downloading/unpacking flask
+  Downloading Flask-1.0.2-py2.py3-none-any.whl (91kB): 91kB downloaded
+Downloading/unpacking Werkzeug>=0.14 (from flask)
+  Downloading Werkzeug-0.15.4-py2.py3-none-any.whl (327kB): 327kB downloaded
+Downloading/unpacking itsdangerous>=0.24 (from flask)
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl
+Downloading/unpacking click>=5.1 (from flask)
+  Downloading Click-7.0-py2.py3-none-any.whl (81kB): 81kB downloaded
+Downloading/unpacking Jinja2>=2.10 (from flask)
+  Downloading Jinja2-2.10.1-py2.py3-none-any.whl (124kB): 124kB downloaded
+Downloading/unpacking MarkupSafe>=0.23 (from Jinja2>=2.10->flask)
+  Downloading MarkupSafe-1.1.1.tar.gz
+  Running setup.py (path:/home/agik/hr/leave_system/server/venv/build/MarkupSafe/setup.py) egg_info for package MarkupSafe
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'project_urls'
+      warnings.warn(msg)
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    no previously-included directories found matching 'docs/_build'
+    warning: no previously-included files matching '*.py[co]' found anywhere in distribution
+Installing collected packages: flask, Werkzeug, itsdangerous, click, Jinja2, MarkupSafe
+*** Error compiling '/home/agik/hr/leave_system/server/venv/build/Jinja2/jinja2/asyncfilters.py'...
+  File "/home/agik/hr/leave_system/server/venv/build/Jinja2/jinja2/asyncfilters.py", line 7
+    async def auto_to_seq(value):
+            ^
+SyntaxError: invalid syntax
+
+*** Error compiling '/home/agik/hr/leave_system/server/venv/build/Jinja2/jinja2/asyncsupport.py'...
+  File "/home/agik/hr/leave_system/server/venv/build/Jinja2/jinja2/asyncsupport.py", line 22
+    async def concat_async(async_gen):
+            ^
+SyntaxError: invalid syntax
+
+  Running setup.py install for MarkupSafe
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'project_urls'
+      warnings.warn(msg)
+    
+    no previously-included directories found matching 'docs/_build'
+    warning: no previously-included files matching '*.py[co]' found anywhere in distribution
+    building 'markupsafe._speedups' extension
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -I/home/agik/hr/leave_system/server/venv/include -I/usr/include/python3.4m -c src/markupsafe/_speedups.c -o build/temp.linux-x86_64-3.4/src/markupsafe/_speedups.o
+    x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.4/src/markupsafe/_speedups.o -o build/lib.linux-x86_64-3.4/markupsafe/_speedups.cpython-34m.so
+Successfully installed flask Werkzeug itsdangerous click Jinja2 MarkupSafe
+Cleaning up...
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ python run.py 
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/agik/hr/leave_system/server/routes/departments.py", line 3, in <module>
+    from  initializer import db
+  File "/home/agik/hr/leave_system/server/initializer.py", line 18, in <module>
+    import pymysql
+ImportError: No module named 'pymysql'
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ gunicorn -w 9 run:app
+[2019-05-15 11:42:44 +0300] [2549] [INFO] Starting gunicorn 19.9.0
+[2019-05-15 11:42:44 +0300] [2549] [INFO] Listening at: http://127.0.0.1:8000 (2549)
+[2019-05-15 11:42:44 +0300] [2549] [INFO] Using worker: sync
+[2019-05-15 11:42:44 +0300] [2552] [INFO] Booting worker with pid: 2552
+[2019-05-15 11:42:45 +0300] [2553] [INFO] Booting worker with pid: 2553
+[2019-05-15 11:42:45 +0300] [2552] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/home/agik/hr/leave_system/server/run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/agik/hr/leave_system/server/routes/departments.py", line 3, in <module>
+    from  initializer import db
+  File "/home/agik/hr/leave_system/server/initializer.py", line 18, in <module>
+    import pymysql
+ImportError: No module named 'pymysql'
+[2019-05-15 11:42:45 +0300] [2552] [INFO] Worker exiting (pid: 2552)
+[2019-05-15 11:42:45 +0300] [2555] [INFO] Booting worker with pid: 2555
+[2019-05-15 11:42:45 +0300] [2553] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/home/agik/hr/leave_system/server/run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/agik/hr/leave_system/server/routes/departments.py", line 3, in <module>
+    from  initializer import db
+  File "/home/agik/hr/leave_system/server/initializer.py", line 18, in <module>
+    import pymysql
+ImportError: No module named 'pymysql'
+[2019-05-15 11:42:45 +0300] [2553] [INFO] Worker exiting (pid: 2553)
+Traceback (most recent call last):
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 203, in run
+    self.manage_workers()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 545, in manage_workers
+    self.spawn_workers()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 617, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+    self.reap_workers()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/agik/hr/leave_system/server/venv/bin/gunicorn", line 11, in <module>
+    sys.exit(run())
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 61, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/base.py", line 223, in run
+    super(Application, self).run()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 232, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 345, in halt
+    self.stop()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 393, in stop
+    time.sleep(0.1)
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+    self.reap_workers()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+[2019-05-15 11:42:45 +0300] [2555] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/home/agik/hr/leave_system/server/run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/agik/hr/leave_system/server/routes/departments.py", line 3, in <module>
+    from  initializer import db
+  File "/home/agik/hr/leave_system/server/initializer.py", line 18, in <module>
+    import pymysql
+ImportError: No module named 'pymysql'
+[2019-05-15 11:42:45 +0300] [2555] [INFO] Worker exiting (pid: 2555)
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ pip install pymysql 
+Downloading/unpacking pymysql
+  Downloading PyMySQL-0.9.3-py2.py3-none-any.whl (47kB): 47kB downloaded
+Installing collected packages: pymysql
+Successfully installed pymysql
+Cleaning up...
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ python run.py 
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/agik/hr/leave_system/server/routes/departments.py", line 3, in <module>
+    from  initializer import db
+  File "/home/agik/hr/leave_system/server/initializer.py", line 20, in <module>
+    from flask_sqlalchemy import SQLAlchemy
+ImportError: No module named 'flask_sqlalchemy'
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ pip install pymysql flask_sqlalchemy
+Requirement already satisfied (use --upgrade to upgrade): pymysql in ./venv/lib/python3.4/site-packages
+Downloading/unpacking flask-sqlalchemy
+  Downloading Flask_SQLAlchemy-2.4.0-py2.py3-none-any.whl
+Requirement already satisfied (use --upgrade to upgrade): Flask>=0.10 in ./venv/lib/python3.4/site-packages (from flask-sqlalchemy)
+Downloading/unpacking SQLAlchemy>=0.8.0 (from flask-sqlalchemy)
+  Downloading SQLAlchemy-1.3.3.tar.gz (5.9MB): 5.9MB downloaded
+  Running setup.py (path:/home/agik/hr/leave_system/server/venv/build/SQLAlchemy/setup.py) egg_info for package SQLAlchemy
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    warning: no files found matching 'sqla_nose.py'
+    no previously-included directories found matching 'doc/build/output'
+Installing collected packages: flask-sqlalchemy, SQLAlchemy
+  Running setup.py install for SQLAlchemy
+    building 'sqlalchemy.cprocessors' extension
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -I/home/agik/hr/leave_system/server/venv/include -I/usr/include/python3.4m -c lib/sqlalchemy/cextension/processors.c -o build/temp.linux-x86_64-3.4/lib/sqlalchemy/cextension/processors.o
+    x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.4/lib/sqlalchemy/cextension/processors.o -o build/lib.linux-x86_64-3.4/sqlalchemy/cprocessors.cpython-34m.so
+    building 'sqlalchemy.cresultproxy' extension
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -I/home/agik/hr/leave_system/server/venv/include -I/usr/include/python3.4m -c lib/sqlalchemy/cextension/resultproxy.c -o build/temp.linux-x86_64-3.4/lib/sqlalchemy/cextension/resultproxy.o
+    x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.4/lib/sqlalchemy/cextension/resultproxy.o -o build/lib.linux-x86_64-3.4/sqlalchemy/cresultproxy.cpython-34m.so
+    building 'sqlalchemy.cutils' extension
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -I/home/agik/hr/leave_system/server/venv/include -I/usr/include/python3.4m -c lib/sqlalchemy/cextension/utils.c -o build/temp.linux-x86_64-3.4/lib/sqlalchemy/cextension/utils.o
+    x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.4/lib/sqlalchemy/cextension/utils.o -o build/lib.linux-x86_64-3.4/sqlalchemy/cutils.cpython-34m.so
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    warning: no files found matching 'sqla_nose.py'
+    no previously-included directories found matching 'doc/build/output'
+Successfully installed flask-sqlalchemy SQLAlchemy
+Cleaning up...
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ python run.py 
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/agik/hr/leave_system/server/routes/departments.py", line 3, in <module>
+    from  initializer import db
+  File "/home/agik/hr/leave_system/server/initializer.py", line 21, in <module>
+    from flask_bcrypt import Bcrypt
+ImportError: No module named 'flask_bcrypt'
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ pip install pymysql flask_bcrypt
+Requirement already satisfied (use --upgrade to upgrade): pymysql in ./venv/lib/python3.4/site-packages
+Downloading/unpacking flask-bcrypt
+  Downloading Flask-Bcrypt-0.7.1.tar.gz
+  Running setup.py (path:/home/agik/hr/leave_system/server/venv/build/flask-bcrypt/setup.py) egg_info for package flask-bcrypt
+    
+Requirement already satisfied (use --upgrade to upgrade): Flask in ./venv/lib/python3.4/site-packages (from flask-bcrypt)
+Downloading/unpacking bcrypt (from flask-bcrypt)
+  Downloading bcrypt-3.1.6.tar.gz (42kB): 42kB downloaded
+  Running setup.py (path:/home/agik/hr/leave_system/server/venv/build/bcrypt/setup.py) egg_info for package bcrypt
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    warning: no previously-included files found matching 'requirements.txt'
+    warning: no previously-included files found matching 'tasks.py'
+    warning: no previously-included files found matching '.travis.yml'
+    warning: no previously-included files found matching 'wheel-scripts'
+    warning: no previously-included files found matching 'Jenkinsfile'
+    warning: no previously-included files found matching '.jenkins'
+    warning: no previously-included files matching '*' found under directory '.jenkins'
+    warning: no previously-included files matching '*' found under directory 'wheel-scripts'
+    no previously-included directories found matching '.travis'
+Downloading/unpacking cffi>=1.1 (from bcrypt->flask-bcrypt)
+  Downloading cffi-1.12.3.tar.gz (456kB): 456kB downloaded
+  Running setup.py (path:/home/agik/hr/leave_system/server/venv/build/cffi/setup.py) egg_info for package cffi
+    
+Downloading/unpacking six>=1.4.1 (from bcrypt->flask-bcrypt)
+  Downloading six-1.12.0-py2.py3-none-any.whl
+Downloading/unpacking pycparser (from cffi>=1.1->bcrypt->flask-bcrypt)
+  Downloading pycparser-2.19.tar.gz (158kB): 158kB downloaded
+  Running setup.py (path:/home/agik/hr/leave_system/server/venv/build/pycparser/setup.py) egg_info for package pycparser
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    warning: no previously-included files found matching 'setup.pyc'
+    warning: no previously-included files matching 'yacctab.*' found under directory 'tests'
+    warning: no previously-included files matching 'lextab.*' found under directory 'tests'
+    warning: no previously-included files matching 'yacctab.*' found under directory 'examples'
+    warning: no previously-included files matching 'lextab.*' found under directory 'examples'
+Installing collected packages: flask-bcrypt, bcrypt, cffi, six, pycparser
+  Running setup.py install for flask-bcrypt
+    
+  Running setup.py install for bcrypt
+    
+    Installed /home/agik/hr/leave_system/server/venv/build/bcrypt/cffi-1.12.3-py3.4-linux-x86_64.egg
+    Searching for pycparser
+    Reading https://pypi.python.org/simple/pycparser/
+    Best match: pycparser 2.19
+    Downloading https://files.pythonhosted.org/packages/68/9e/49196946aee219aead1290e00d1e7fdeab8567783e83e1b9ab5585e6206a/pycparser-2.19.tar.gz#sha256=a988718abfad80b6b157acce7bf130a30876d27603738ac39f140993246b25b3
+    Processing pycparser-2.19.tar.gz
+    Writing /tmp/easy_install-e2pi7wkg/pycparser-2.19/setup.cfg
+    Running pycparser-2.19/setup.py -q bdist_egg --dist-dir /tmp/easy_install-e2pi7wkg/pycparser-2.19/egg-dist-tmp-qmcok18j
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    warning: no previously-included files found matching 'setup.pyc'
+    warning: no previously-included files matching 'yacctab.*' found under directory 'tests'
+    warning: no previously-included files matching 'lextab.*' found under directory 'tests'
+    warning: no previously-included files matching 'yacctab.*' found under directory 'examples'
+    warning: no previously-included files matching 'lextab.*' found under directory 'examples'
+    zip_safe flag not set; analyzing archive contents...
+    pycparser.ply.__pycache__.lex.cpython-34: module references __file__
+    pycparser.ply.__pycache__.lex.cpython-34: module MAY be using inspect.getsourcefile
+    pycparser.ply.__pycache__.yacc.cpython-34: module references __file__
+    pycparser.ply.__pycache__.yacc.cpython-34: module MAY be using inspect.getsourcefile
+    pycparser.ply.__pycache__.yacc.cpython-34: module MAY be using inspect.stack
+    pycparser.ply.__pycache__.ygen.cpython-34: module references __file__
+    
+    Installed /home/agik/hr/leave_system/server/venv/build/bcrypt/pycparser-2.19-py3.4.egg
+    generating cffi module 'build/temp.linux-x86_64-3.4/_bcrypt.c'
+    building '_bcrypt' extension
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -Isrc/_csrc -I/home/agik/hr/leave_system/server/venv/include -I/usr/include/python3.4m -c build/temp.linux-x86_64-3.4/_bcrypt.c -o build/temp.linux-x86_64-3.4/build/temp.linux-x86_64-3.4/_bcrypt.o
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -Isrc/_csrc -I/home/agik/hr/leave_system/server/venv/include -I/usr/include/python3.4m -c src/_csrc/blf.c -o build/temp.linux-x86_64-3.4/src/_csrc/blf.o
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -Isrc/_csrc -I/home/agik/hr/leave_system/server/venv/include -I/usr/include/python3.4m -c src/_csrc/bcrypt.c -o build/temp.linux-x86_64-3.4/src/_csrc/bcrypt.o
+    src/_csrc/bcrypt.c: In function ‘decode_base64’:
+    src/_csrc/bcrypt.c:205:22: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+      const u_int8_t *p = b64data;
+                          ^
+    src/_csrc/bcrypt.c: In function ‘encode_base64’:
+    src/_csrc/bcrypt.c:247:17: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+      u_int8_t *bp = b64buffer;
+                     ^
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -Isrc/_csrc -I/home/agik/hr/leave_system/server/venv/include -I/usr/include/python3.4m -c src/_csrc/bcrypt_pbkdf.c -o build/temp.linux-x86_64-3.4/src/_csrc/bcrypt_pbkdf.o
+    In file included from src/_csrc/bcrypt_pbkdf.c:24:0:
+    src/_csrc/sha2.h:68:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__string__,2,3)));
+      ^
+    src/_csrc/sha2.h:70:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__minbytes__,1,SHA256_DIGEST_LENGTH)));
+      ^
+    src/_csrc/sha2.h:74:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__string__,2,3)));
+      ^
+    src/_csrc/sha2.h:76:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__minbytes__,1,SHA384_DIGEST_LENGTH)));
+      ^
+    src/_csrc/sha2.h:80:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__string__,2,3)));
+      ^
+    src/_csrc/sha2.h:82:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__minbytes__,1,SHA512_DIGEST_LENGTH)));
+      ^
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -Isrc/_csrc -I/home/agik/hr/leave_system/server/venv/include -I/usr/include/python3.4m -c src/_csrc/sha2.c -o build/temp.linux-x86_64-3.4/src/_csrc/sha2.o
+    In file included from src/_csrc/sha2.c:38:0:
+    src/_csrc/sha2.h:68:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__string__,2,3)));
+      ^
+    src/_csrc/sha2.h:70:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__minbytes__,1,SHA256_DIGEST_LENGTH)));
+      ^
+    src/_csrc/sha2.h:74:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__string__,2,3)));
+      ^
+    src/_csrc/sha2.h:76:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__minbytes__,1,SHA384_DIGEST_LENGTH)));
+      ^
+    src/_csrc/sha2.h:80:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__string__,2,3)));
+      ^
+    src/_csrc/sha2.h:82:2: warning: ‘__bounded__’ attribute directive ignored [-Wattributes]
+      __attribute__((__bounded__(__minbytes__,1,SHA512_DIGEST_LENGTH)));
+      ^
+    src/_csrc/sha2.c: In function ‘SHA256Final’:
+    src/_csrc/sha2.c:475:2: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+      *(u_int64_t *)&context->buffer[SHA256_SHORT_BLOCK_LENGTH] = context->bitcount[0];
+      ^
+    src/_csrc/sha2.c: In function ‘SHA512Last’:
+    src/_csrc/sha2.c:751:2: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+      *(u_int64_t *)&context->buffer[SHA512_SHORT_BLOCK_LENGTH] = context->bitcount[1];
+      ^
+    src/_csrc/sha2.c:752:2: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+      *(u_int64_t *)&context->buffer[SHA512_SHORT_BLOCK_LENGTH+8] = context->bitcount[0];
+      ^
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -Isrc/_csrc -I/home/agik/hr/leave_system/server/venv/include -I/usr/include/python3.4m -c src/_csrc/timingsafe_bcmp.c -o build/temp.linux-x86_64-3.4/src/_csrc/timingsafe_bcmp.o
+    x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.4/build/temp.linux-x86_64-3.4/_bcrypt.o build/temp.linux-x86_64-3.4/src/_csrc/blf.o build/temp.linux-x86_64-3.4/src/_csrc/bcrypt.o build/temp.linux-x86_64-3.4/src/_csrc/bcrypt_pbkdf.o build/temp.linux-x86_64-3.4/src/_csrc/sha2.o build/temp.linux-x86_64-3.4/src/_csrc/timingsafe_bcmp.o -o build/lib.linux-x86_64-3.4/bcrypt/_bcrypt.cpython-34m.so
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    warning: no previously-included files found matching 'requirements.txt'
+    warning: no previously-included files found matching 'tasks.py'
+    warning: no previously-included files found matching '.travis.yml'
+    warning: no previously-included files found matching 'wheel-scripts'
+    warning: no previously-included files found matching 'Jenkinsfile'
+    warning: no previously-included files found matching '.jenkins'
+    warning: no previously-included files matching '*' found under directory '.jenkins'
+    warning: no previously-included files matching '*' found under directory 'wheel-scripts'
+    no previously-included directories found matching '.travis'
+  Running setup.py install for cffi
+    building '_cffi_backend' extension
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -DUSE__THREAD -DHAVE_SYNC_SYNCHRONIZE -I/usr/include/ffi -I/usr/include/libffi -I/home/agik/hr/leave_system/server/venv/include -I/usr/include/python3.4m -c c/_cffi_backend.c -o build/temp.linux-x86_64-3.4/c/_cffi_backend.o
+    x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.4/c/_cffi_backend.o -lffi -o build/lib.linux-x86_64-3.4/_cffi_backend.cpython-34m.so
+    
+  Running setup.py install for pycparser
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    warning: no previously-included files found matching 'setup.pyc'
+    warning: no previously-included files matching 'yacctab.*' found under directory 'tests'
+    warning: no previously-included files matching 'lextab.*' found under directory 'tests'
+    warning: no previously-included files matching 'yacctab.*' found under directory 'examples'
+    warning: no previously-included files matching 'lextab.*' found under directory 'examples'
+    Build the lexing/parsing tables
+Successfully installed flask-bcrypt bcrypt cffi six pycparser
+Cleaning up...
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ pip install pymysql flask_cors flask_mail
+Requirement already satisfied (use --upgrade to upgrade): pymysql in ./venv/lib/python3.4/site-packages
+Downloading/unpacking flask-cors
+  Downloading Flask_Cors-3.0.7-py2.py3-none-any.whl
+Downloading/unpacking flask-mail
+  Downloading Flask-Mail-0.9.1.tar.gz (45kB): 45kB downloaded
+  Running setup.py (path:/home/agik/hr/leave_system/server/venv/build/flask-mail/setup.py) egg_info for package flask-mail
+    
+    warning: no previously-included files matching '*.pyc' found under directory 'docs'
+    warning: no previously-included files matching '*.pyo' found under directory 'docs'
+    no previously-included directories found matching 'docs/_build'
+    no previously-included directories found matching 'docs/_themes/.git'
+Requirement already satisfied (use --upgrade to upgrade): Six in ./venv/lib/python3.4/site-packages (from flask-cors)
+Requirement already satisfied (use --upgrade to upgrade): Flask>=0.9 in ./venv/lib/python3.4/site-packages (from flask-cors)
+Downloading/unpacking blinker (from flask-mail)
+  Downloading blinker-1.4.tar.gz (111kB): 111kB downloaded
+  Running setup.py (path:/home/agik/hr/leave_system/server/venv/build/blinker/setup.py) egg_info for package blinker
+    
+Installing collected packages: flask-cors, flask-mail, blinker
+  Running setup.py install for flask-mail
+    
+    warning: no previously-included files matching '*.pyc' found under directory 'docs'
+    warning: no previously-included files matching '*.pyo' found under directory 'docs'
+    no previously-included directories found matching 'docs/_build'
+    no previously-included directories found matching 'docs/_themes/.git'
+  Running setup.py install for blinker
+    
+Successfully installed flask-cors flask-mail blinker
+Cleaning up...
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ python run.py 
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/agik/hr/leave_system/server/routes/departments.py", line 4, in <module>
+    from  models.models import *
+  File "/home/agik/hr/leave_system/server/models/models.py", line 7, in <module>
+    from flask_login import UserMixin, LoginManager
+ImportError: No module named 'flask_login'
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ pip install flask_login
+Downloading/unpacking flask-login
+  Downloading Flask-Login-0.4.1.tar.gz
+  Running setup.py (path:/home/agik/hr/leave_system/server/venv/build/flask-login/setup.py) egg_info for package flask-login
+    
+Requirement already satisfied (use --upgrade to upgrade): Flask in ./venv/lib/python3.4/site-packages (from flask-login)
+Installing collected packages: flask-login
+  Running setup.py install for flask-login
+    
+Successfully installed flask-login
+Cleaning up...
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ python run.py 
+ROW USERNAME  LeaveAdmin@10101
+b'$2b$12$XTqbiyBtXaAGOfSRJu61oOX2FQ.rzEfp8dz/R0o2Lp0h5tQZ39plK'
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/agik/hr/leave_system/server/routes/departments.py", line 6, in <module>
+    from auths.appAuth import *
+  File "/home/agik/hr/leave_system/server/auths/appAuth.py", line 10, in <module>
+    import jwt
+ImportError: No module named 'jwt'
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ pip install jwt
+Downloading/unpacking jwt
+  Downloading jwt-0.6.1-py3-none-any.whl
+Cleaning up...
+Exception:
+Traceback (most recent call last):
+  File "/home/agik/hr/leave_system/server/venv/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2482, in _dep_map
+    return self.__dep_map
+  File "/home/agik/hr/leave_system/server/venv/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2344, in __getattr__
+    raise AttributeError(attr)
+AttributeError: _DistInfoDistribution__dep_map
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/pip/basecommand.py", line 122, in main
+    status = self.run(options, args)
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/pip/commands/install.py", line 278, in run
+    requirement_set.prepare_files(finder, force_root_egg_info=self.bundle, bundle=self.bundle)
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/pip/req.py", line 1266, in prepare_files
+    req_to_install.extras):
+  File "/home/agik/hr/leave_system/server/venv/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2291, in requires
+    dm = self._dep_map
+  File "/home/agik/hr/leave_system/server/venv/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2484, in _dep_map
+    self.__dep_map = self._compute_dependencies()
+  File "/home/agik/hr/leave_system/server/venv/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2508, in _compute_dependencies
+    parsed = next(parse_requirements(distvers))
+  File "/home/agik/hr/leave_system/server/venv/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2605, in parse_requirements
+    line, p, specs = scan_list(VERSION,LINE_END,line,p,(1,2),"version spec")
+  File "/home/agik/hr/leave_system/server/venv/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2583, in scan_list
+    "Expected ',' or end-of-list in",line,"at",line[p:]
+ValueError: ("Expected ',' or end-of-list in", 'cryptography <3.*,>=2.2.2', 'at', '*,>=2.2.2')
+
+Storing debug log for failure in /home/agik/.pip/pip.log
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ pip install jwt
+Downloading/unpacking jwt
+  Downloading jwt-0.6.1-py3-none-any.whl
+Cleaning up...
+Exception:
+Traceback (most recent call last):
+  File "/home/agik/hr/leave_system/server/venv/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2482, in _dep_map
+    return self.__dep_map
+  File "/home/agik/hr/leave_system/server/venv/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2344, in __getattr__
+    raise AttributeError(attr)
+AttributeError: _DistInfoDistribution__dep_map
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/pip/basecommand.py", line 122, in main
+    status = self.run(options, args)
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/pip/commands/install.py", line 278, in run
+    requirement_set.prepare_files(finder, force_root_egg_info=self.bundle, bundle=self.bundle)
+  File "/home/agik/hr/leave_system/server/venv/lib/python3.4/site-packages/pip/req.py", line 1266, in prepare_files
+    req_to_install.extras):
+  File "/home/agik/hr/leave_system/server/venv/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2291, in requires
+    dm = self._dep_map
+  File "/home/agik/hr/leave_system/server/venv/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2484, in _dep_map
+    self.__dep_map = self._compute_dependencies()
+  File "/home/agik/hr/leave_system/server/venv/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2508, in _compute_dependencies
+    parsed = next(parse_requirements(distvers))
+  File "/home/agik/hr/leave_system/server/venv/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2605, in parse_requirements
+    line, p, specs = scan_list(VERSION,LINE_END,line,p,(1,2),"version spec")
+  File "/home/agik/hr/leave_system/server/venv/lib/python-wheels/setuptools-3.3-py2.py3-none-any.whl/pkg_resources.py", line 2583, in scan_list
+    "Expected ',' or end-of-list in",line,"at",line[p:]
+ValueError: ("Expected ',' or end-of-list in", 'cryptography <3.*,>=2.2.2', 'at', '*,>=2.2.2')
+
+Storing debug log for failure in /home/agik/.pip/pip.log
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ python run.py 
+ROW USERNAME  LeaveAdmin@10101
+b'$2b$12$RLzVZ/VvGxAkWnxUcX651uJUGGIgZp4FXrjd0uxARC.0ByPGwnBWm'
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from routes.departments import *
+  File "/home/agik/hr/leave_system/server/routes/departments.py", line 6, in <module>
+    from auths.appAuth import *
+  File "/home/agik/hr/leave_system/server/auths/appAuth.py", line 10, in <module>
+    import jwt
+ImportError: No module named 'jwt'
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ pip install flask-jwt-extended
+Downloading/unpacking flask-jwt-extended
+  Downloading Flask-JWT-Extended-3.18.2.tar.gz
+  Running setup.py (path:/home/agik/hr/leave_system/server/venv/build/flask-jwt-extended/setup.py) egg_info for package flask-jwt-extended
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'long_description_content_type'
+      warnings.warn(msg)
+    
+Requirement already satisfied (use --upgrade to upgrade): Werkzeug>=0.14 in ./venv/lib/python3.4/site-packages (from flask-jwt-extended)
+Requirement already satisfied (use --upgrade to upgrade): Flask in ./venv/lib/python3.4/site-packages (from flask-jwt-extended)
+Downloading/unpacking PyJWT>=1.6.4 (from flask-jwt-extended)
+  Downloading PyJWT-1.7.1-py2.py3-none-any.whl
+Requirement already satisfied (use --upgrade to upgrade): six in ./venv/lib/python3.4/site-packages (from flask-jwt-extended)
+Installing collected packages: flask-jwt-extended, PyJWT
+  Running setup.py install for flask-jwt-extended
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'long_description_content_type'
+      warnings.warn(msg)
+    
+Successfully installed flask-jwt-extended PyJWT
+Cleaning up...
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ python run.py 
+ROW USERNAME  LeaveAdmin@10101
+b'$2b$12$zHbrAWZfck11mlpks5Fikuc14KH6oByb666Ro4vnVB7fI5I2EVvwW'
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 186-260-384
+ROW USERNAME  LeaveAdmin@10101
+b'$2b$12$QYyaw2v54lo6ex2BokXZKuf83l5TZYWs51vliXPci8L/Lp6SxFN5S'
+ * Debugger is active!
+ * Debugger PIN: 174-212-631
+^C(venv) agik@ODK-SERVER:~/hr/leave_system/server$ gunicorn -w 9 run:app
+[2019-05-15 11:54:52 +0300] [2813] [INFO] Starting gunicorn 19.9.0
+[2019-05-15 11:54:52 +0300] [2813] [INFO] Listening at: http://127.0.0.1:8000 (2813)
+[2019-05-15 11:54:52 +0300] [2813] [INFO] Using worker: sync
+[2019-05-15 11:54:52 +0300] [2816] [INFO] Booting worker with pid: 2816
+[2019-05-15 11:54:52 +0300] [2817] [INFO] Booting worker with pid: 2817
+[2019-05-15 11:54:53 +0300] [2820] [INFO] Booting worker with pid: 2820
+[2019-05-15 11:54:53 +0300] [2822] [INFO] Booting worker with pid: 2822
+[2019-05-15 11:54:53 +0300] [2823] [INFO] Booting worker with pid: 2823
+[2019-05-15 11:54:53 +0300] [2824] [INFO] Booting worker with pid: 2824
+[2019-05-15 11:54:53 +0300] [2825] [INFO] Booting worker with pid: 2825
+ROW USERNAME  LeaveAdmin@10101
+[2019-05-15 11:54:53 +0300] [2828] [INFO] Booting worker with pid: 2828
+ROW USERNAME  LeaveAdmin@10101
+[2019-05-15 11:54:53 +0300] [2831] [INFO] Booting worker with pid: 2831
+ROW USERNAME  LeaveAdmin@10101
+ROW USERNAME  LeaveAdmin@10101
+ROW USERNAME  LeaveAdmin@10101
+b'$2b$12$1UcXr.6d4F2.EgtkP2zo4u4m95EK14gFD3VwnIbkmBQ77OKgvHpTW'
+ROW USERNAME  LeaveAdmin@10101
+b'$2b$12$Z8PwXQTOYMcF0m6LPGUuuOuuu7QjJa2mDKBwmlVyicTubcGar5dPS'
+ROW USERNAME  LeaveAdmin@10101
+ROW USERNAME  LeaveAdmin@10101
+b'$2b$12$3a9lPOhTzbTZtXN8/6nL..GFILC8UPIRupveXtub96lo2XUDNTxHi'
+ROW USERNAME  LeaveAdmin@10101
+b'$2b$12$IW0gQdCEcNqaWp2AL6HcKuKI6lgPSP7oU32opFl7cd4pof0FXPXhC'
+b'$2b$12$vNtaJuZX/Puo2xpiz/ILl.aPCe/YVBG5o0.j/zuXACOX/MQUufV62'
+b'$2b$12$68vV2CGU47CixIB0AHJ7EOAnqc4Tms.bgNYRNGUYPcLhCipkf7LCS'
+b'$2b$12$lx6m774Umeb2h6MFtN4EfOXXSyZVUrr6IN35VRwdZTmES860JmkZ.'
+b'$2b$12$2c9DGwFkWpTP7xgwVKOfS.J0eQy09TLc7WrRh7ZCHVrh8ty2M5OPe'
+b'$2b$12$C80Ys5bMyZIKdHslcuoobOj89Yhh5M0OMJ8zaQ3hKL9noYdyqQw2O'
+^C[2019-05-15 11:55:01 +0300] [2813] [INFO] Handling signal: int
+[2019-05-15 11:55:01 +0300] [2823] [INFO] Worker exiting (pid: 2823)
+[2019-05-15 11:55:01 +0300] [2822] [INFO] Worker exiting (pid: 2822)
+[2019-05-15 11:55:01 +0300] [2816] [INFO] Worker exiting (pid: 2816)
+[2019-05-15 11:55:01 +0300] [2817] [INFO] Worker exiting (pid: 2817)
+[2019-05-15 11:55:01 +0300] [2820] [INFO] Worker exiting (pid: 2820)
+[2019-05-15 11:55:01 +0300] [2831] [INFO] Worker exiting (pid: 2831)
+[2019-05-15 11:55:01 +0300] [2828] [INFO] Worker exiting (pid: 2828)
+[2019-05-15 11:55:01 +0300] [2824] [INFO] Worker exiting (pid: 2824)
+[2019-05-15 11:55:01 +0300] [2825] [INFO] Worker exiting (pid: 2825)
+[2019-05-15 11:55:01 +0300] [2813] [INFO] Shutting down: Master
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ sudo systemctl status leaveapp
+[sudo] password for agik: 
+sudo: systemctl: command not found
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ sudo service  status leaveapp
+status: unrecognized service
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ sudo service gunicorn status
+gunicorn: unrecognized service
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ sudo service supervisor restart 
+Restarting supervisor: supervisord.
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ sudo service nginx restart 
+ * Restarting nginx nginx                                                                                                                                         [ OK ] 
+(venv) agik@ODK-SERVER:~/hr/leave_system/server$ Leave@10102
+

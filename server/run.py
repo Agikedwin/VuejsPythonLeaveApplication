@@ -9,6 +9,7 @@ from routes.LeaveApproval import *
 from routes.testDate import *
 from  routes.Login import *
 from  routes.Holidays import *
+from  routes.AccumulatedAnnualLeavedays import *
 
 from initializer import  app
 

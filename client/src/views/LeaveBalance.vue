@@ -15,7 +15,9 @@
         <td class="text-xs-left">{{ props.item.leave_type }}</td>
         <!-- <td class="text-xs-left">{{ props.item.date_from }}</td> -->         
         <td class="text-xs-left">{{props.item.leave_days}}</td>
-         <td class="text-xs-left">{{ props.item.leave_balance }}</td> 
+
+        <td class="text-xs-left">{{ props.item.daysEarned }}</td> 
+         <td class="text-xs-left">{{ props.item.leave_balance }}</td>
         <td class="text-xs-left">
          <v-progress-linear
          v-model="props.item.per_remaining"         
@@ -59,6 +61,7 @@ import api from '../apis/api'
           
            {text:'Leave Type', value:'surname' ,align: 'left',  },
           { text: 'Leave Days', value: 'programe' },
+           { text: 'Days Earned', value: 'earned' },
            { text: 'Days Remaining', value: 'nationality' },
           { text: '% Used', value: 'nationality' }
         ],

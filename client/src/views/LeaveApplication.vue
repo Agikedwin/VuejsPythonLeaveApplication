@@ -2,8 +2,11 @@
 <v-flex xs12 sm12 offset-sm0>
   <v-card class="applyleave">
     <v-form v-model="valid" ref="form">
-      <v-container class="cont-2">
-        <v-layout row wrap>
+      
+
+     <v-list>
+
+       <v-layout row wrap>
           <v-flex xs12 sm5>
             <v-autocomplete
               v-slot:items="supervisorsList"
@@ -21,14 +24,21 @@
             ></v-autocomplete>
           </v-flex>
 
-           <v-flex xs12 sm1></v-flex>
+          <v-flex xs12 sm1></v-flex>
 
+        <v-flex xs12 sm5>
+          <v-text-field
+              disabled
+            color="teal"
+            v-model="applicationForm.usedLeaveDays"
+            label="Days Taken "
+            
+          ></v-text-field>
+        </v-flex>
+
+          
           <v-flex xs12 sm5></v-flex>
         </v-layout>
-        
-      </v-container>
-
-     <v-list>
       <v-layout row wrap>
        
         <v-flex xs12 sm5>
@@ -48,7 +58,7 @@
        <v-flex xs12 sm1></v-flex>
 
         <v-flex xs12 sm5>
-          <v-text-field color="teal" :rules="remainingRules" label="Days Remaining" v-model="applicationForm.available"></v-text-field>
+          <v-text-field color="teal"  disabled :rules="remainingRules" label="Days Remaining" v-model="applicationForm.available"></v-text-field>
         </v-flex>
       </v-layout>
 
@@ -121,7 +131,7 @@
             disabled
             :rules="nameRules"
             color="teal"
-            label="Number of days"
+            label="Days Applying For"
             v-model="applicationForm.no_days"
           ></v-text-field>
     </v-flex>
@@ -130,7 +140,9 @@
      <v-text-field
               disabled
             color="teal"
-            label="Days Carried Forward "
+            
+            v-model="applicationForm.daysEligible"
+            label="Eligible for"
             
           ></v-text-field>
     </v-flex>
@@ -241,6 +253,10 @@ export default {
       no_days: "",
       note: "",
       reliever_payroll_no:"",
+      accruedLeaveDays:"",
+      usedLeaveDays:"",
+      daysEligible:""
+      
     },
     datePayload: {
       date_from: "",
@@ -265,6 +281,8 @@ export default {
     supervisorsList: [],
     supervisorsList: [],
     supervisor_id: "",
+    
+
 
     showDialog: false,
     valid: false,
@@ -278,6 +296,9 @@ export default {
       v => !!v || "Please select supervisor",
       v => (v && v.length >= 2) || "Name must be less than 10 characters"
     ],
+
+     daysEligibleRule: [v => (v && v <=0) || "You are not eligible for the number of days you are applying",
+                    v => !!v || "Field is required"],
   }),
 
   methods: {
@@ -293,7 +314,6 @@ export default {
     async addRecord(payload) {
       this.showDialog = true;
       await api.addEntry("addApplication", payload).then(data => {
-        console.log("RESPONSE STATUS ::: ", data);
         this.msg = "Leave successfully Applied";
         this.showDialog = false;
         this.savingDialog=false
@@ -320,7 +340,6 @@ export default {
 
      
 
-      console.log("THE Reliever :::: ", this.applicationForm.reliever_payroll_no);
       
        
     },
@@ -328,15 +347,12 @@ export default {
       getEmpSupervisorAssigned(){
         api.getEntries("checkSupExist")
           .then(data => {
-            console.log("the liever ****** :::: 222", data)
           }).finally(data=>{
-            console.log("the liever ****** :::: ", data)
           })
 
     },
 
     submit(val) {
-      console.log("Adding val  this.applicationForm", this.applicationForm);
       console.log(this.$refs.form.validate());
       if (this.$refs.form.validate()) {
         if (val == "apply") {
@@ -387,6 +403,9 @@ export default {
     async getNoDays(id) {
       await api.getSingleEntry("getNoDays", id).then(data => {
         this.applicationForm.available = data.data.remaining;
+        this.applicationForm.accruedLeaveDays = data.data.accruedLeaveDays;
+        this.applicationForm.usedLeaveDays = data.data.usedLeaveDays
+        console.log("THE CURRENT ", data.data)
       });
     },
     async calculateDays(date_from, date_to) {
@@ -397,13 +416,14 @@ export default {
       await api
         .addEntry("calculateLeaveDays", this.datePayload)
         .then(result => {
-          console.log("NUMBER OF DAYS :::", result);
           this.applicationForm.no_days = result.data.no_days;
         });
+
+        this.applicationForm.daysEligible = (this.applicationForm.available - this.applicationForm.no_days) + '  '+'more days';
     }
   },
   created() {
-    console.log("PAYROLL NO LOCAL STORAGE ",localStorage.getItem("userSession"))
+   
     this.getLeaveTypes();
     this.fetchEmployees();
    //this.getEmpSupervisorAssigned()

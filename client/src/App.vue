@@ -216,9 +216,16 @@
         <v-list>
           
           <v-list-tile subheader > 
+
+            <!-- <span class="teal--text">Appointment date : </span><h3>{{userLoggeInDOA}}</h3>
+            <v-spacer></v-spacer> -->
+            <span class="teal--text">Leave Days Earned  :  </span><h3>{{  accruedDays}}</h3>
+            <!-- <v-spacer></v-spacer>
+            <span class="teal--text">Carried Forward: </span><h3>{{accruedDays}}</h3> -->
+           
              <v-spacer></v-spacer>
             
-           <span class="teal--text">{{userLoggeInName }} </span> <h3> ( {{  userLoggeInCadre || uppercase}} )</h3>
+           <span class="teal--text">{{userLoggeInName }}  </span> <h3> ( {{  userLoggeInCadre || uppercase}} )</h3>
           </v-list-tile>
           
         </v-list>
@@ -309,7 +316,7 @@ export default {
     drawerRight: null,
     right: false,
     left: false,
-    login: false,
+    login: true,
     loginState:false,
     validatepwd:false,
     supervisorExists:false,
@@ -319,6 +326,7 @@ export default {
     userLoggeInCadre:"",
     userLoggeInPayroll:"",
     userLoggeInDOA:"",
+    accruedDays:"",
     LoginForm: {
       username: "",
       password: ""
@@ -360,20 +368,23 @@ export default {
       ["Employee Supervisor", "", "employeesupervisor"]
     ],
 
-    admins2: [
+    admins2: [                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
       ["Leave Balances", "", "leavetypebalances"],
       ["Leave Applications History", "", "allapplications"],
-      ["Approve/Decline Leave", "", "leaveApproval"]
+      ["Approve/Decline Leave", "", "leaveApproval"],
+      ["Accumulated Days", "" ,"accumulatedLeaveDays"],
     ],
 
     portal: [
       ["Leave Balance", "leaveBalance"],
+      ["Accumulated Days", "accumulatedLeaveDays"],
       ["Apply Leave", "leaveApplication"],
-      ["Application History", "applicationHistory"]
+      ["Application History", "applicationHistory"],
+      
     ],
     mini: true,
     right: null
-  }),
+  }), 
   props: {
     source: String
   },
@@ -404,15 +415,15 @@ export default {
       await api
         .loginUser("userLogin", payload)
         .then(result => {
-          console.log("RESPONSE AT LOGIN ************ ",result)
+          //console.log("RESPONSE AT LOGIN ************ ",result)
           if(result == "False"){
-            console.log("RESPONSE AT LOGIN 111 ",result)
+            //console.log("RESPONSE AT LOGIN 111 ",result)
             this.supervisorExists = true;
           }else {
 
            this.supervisorExists = false;
 
-            console.log("RESPONSE AT LOGIN  22",result)
+           // console.log("RESPONSE AT LOGIN  22",result)
           if (result != null) {
             this.login = true;
             this.validatepwd = false
@@ -423,7 +434,7 @@ export default {
             this.validatepwd=true
             console.log("Wrong Pwd");
           }
-          console.log("AT LOGIN 22", localStorage.getItem("userSession"));
+          //console.log("AT LOGIN 22", localStorage.getItem("userSession"));
 
           }
           
@@ -447,6 +458,7 @@ export default {
       this.userLoggeInName = userDetails.surname+ "   "+ userDetails.other_names  //"    ("+ userDetails.designation+")"
       this.userLoggeInDOA = userDetails.appointment_date
       this.userLoggeInPayroll = userDetails.payroll_no
+      this.accruedDays = userDetails.accruedLeaveDays
       if(userDetails.designation <= 6){
         this.hrPreviledges = true
         
@@ -459,6 +471,8 @@ export default {
       }
 
       this.userCadre(userDetails.designation)
+
+      //console.log("the test now ", localStorage.getItem("userSession"))
       
 
     },
@@ -473,6 +487,7 @@ export default {
       this.loginWatcher = false;
       
       localStorage.removeItem('tokenKey');
+      localStorage.removeItem('daysAccrued');
        this.login=false;
     },
 

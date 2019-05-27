@@ -8,8 +8,8 @@ import dev from '../config/dev'
 
 ////127.0.0.1:5000/api/ 
 //let url = 'http://192.168.88.159:5000/api/'
-//let url = 'http://41.89.200.55/api/'
-let url = 'http://127.0.0.1:5000/api/'
+let url = 'http://41.89.200.55/api/'
+//let url = 'http://127.0.0.1:5000/api/'
 //let url = environ.API_URL;
 
 //const API_URL = process.env.API_URL
@@ -36,7 +36,7 @@ export default {
             .get(url + urlpath)
             .then(res => {
 
-                //console.log("THE RESULT AT API ",res)
+                console.log("THE RESULT AT API ",res)
 
                 data = res.data.result
 
@@ -145,6 +145,7 @@ export default {
                     localStorage.removeItem('userSession')
                     localStorage.removeItem('tokenKey');
                     localStorage.removeItem('userSessionPayroll');
+                    localStorage.removeItem('daysAccrued');
                     data = res
                     console.log("THE TESPONSE ", res.data)
                     const receivedToken = res.data.token;
@@ -153,7 +154,8 @@ export default {
                     axios.defaults.headers.common['Authorization'] = localStorage.getItem('tokenKey');
                     localStorage.setItem('userSession', res.data.user_details.designation);
                     localStorage.setItem('userSessionPayroll', res.data.user_details.payroll_no);
-                    console.log("AT LOGIN ::::::::::::::*********", localStorage.getItem('userSession'))
+                    localStorage.setItem('daysAccrued', res.data.user_details);
+                    console.log("AT LOGIN daysAccrued ::::::::::::::*********", localStorage.getItem('daysAccrued'))
                 }  else if (res.data.login_state == "False"){
                     data = res.data.login_state;
 

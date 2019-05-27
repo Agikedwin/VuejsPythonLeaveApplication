@@ -4,6 +4,7 @@ from  models.models import *
 from datetime import datetime
 now = datetime.now()
 from routes.Login import getUserId
+from  routes.AccumulatedAnnualLeavedays import getAccumulatedLeavedays
 from routes.testDate import getHolidays
 #user_id=testToken()
 
@@ -15,40 +16,52 @@ def connCheck():
 @app.route('/api/getNoDays/<id>',methods=['GET'])
 
 def get_no_days(id):
+    initial_balance = 0;
 
-    initial_balance =0;
-
-    #Get the leave type allwable days
-    query = db.session.query(LeaveTypes).filter(LeaveTypes.leave_id == id ).first()
-    leave_days = query.no_days
+    # Get the leave type allwable days
+    query = db.session.query(LeaveTypes).filter(LeaveTypes.leave_id == id).first()
+    leave_days = 0
 
     loggedInUser = getUserId()
 
+    accruedLeaveDays = 0
     # get initial balance only for annual leave type
 
-    print("THE INITIAL ::",query.leave_id)
+    print("THE INITIAL ::", query.leave_id)
 
     if (query.leave_id == 1):
+
+        # get accumulated leave days
+        accruedLeaveDays = getAccumulatedLeavedays(loggedInUser)
+        print("ACCUMULATED DAYS ", accruedLeaveDays)
+
         initial_balance = initialLeaveBalance(loggedInUser)
+        # if leave id is 1 use accrued leave days
+        leave_days = accruedLeaveDays
 
     else:
         initial_balance = 0
+        # else get the defined leave day from database
+        leave_days = query.no_days
 
-    #Get start and end date
+    # Get start and end date
 
-
-
-    queryApproved = db.session.query(LeaveApplications)\
-        .filter(LeaveApplications.leave_id==query.leave_id)\
+    queryApproved = db.session.query(LeaveApplications) \
+        .filter(LeaveApplications.leave_id == query.leave_id) \
         .filter(LeaveApplications.payroll_no == loggedInUser).all()
     if queryApproved:
-        data=getApplication(queryApproved,leave_days)
+        data = getApplication(queryApproved, leave_days)
+
+        print("Leave Days ::*********2 ",leave_days)
 
 
-
-        return jsonify({'status':'success','remaining':data, 'initial_balance':initial_balance})
+        return jsonify({'status':'success','usedLeaveDays':data, 'initial_balance':initial_balance,
+                        'accruedLeaveDays':leave_days,'remaining':leave_days - data })
     else:
-        return jsonify({'status':'success','remaining':leave_days-initial_balance,'initial_balance':initial_balance})
+        print("Leave Days ::********* 3", leave_days)
+        return jsonify({'status':'success','remaining':leave_days-initial_balance,
+                        'initial_balance':initial_balance,'accruedLeaveDays':leave_days,
+                        'usedLeaveDays':leave_days-(leave_days-initial_balance) })
 
 
 def getApplication(queryApproved,leave_days):
@@ -58,8 +71,6 @@ def getApplication(queryApproved,leave_days):
 
 
     for approves in queryApproved:
-
-
 
         date_from = approves.date_from
         date_to = approves.date_to
@@ -283,6 +294,9 @@ def getEmpLeaveApplications():
 @app.route('/api/leaveHistory',methods=['GET'])
 def applicationHistoryStatus():
 
+    daysEarned = getAccumulatedLeavedays(getUserId())
+    remaining=0
+
     result = []
     #.filter(LeaveTypes.leave_id == 1)
     for leave in LeaveTypes.query.all():
@@ -290,14 +304,22 @@ def applicationHistoryStatus():
 
         data['leave_type'] = leave.leave_name
         data['leave_days'] = leave.no_days
-        mydays = leave.no_days
+        mydays = 0
+        if leave.leave_id == 1:
+            data['daysEarned'] = daysEarned
+            mydays = daysEarned
+        else:
+            mydays = leave.no_days
+            data['daysEarned'] = mydays
+
         remaining = loopApplications(leave.leave_id)
         print("DAYS RETURNED " ,remaining)
         percentage = round(remaining/mydays * 100)
         data['per_remaining'] = percentage
         print("% REm ", percentage)
-        diff = mydays -remaining
+        diff = mydays - remaining
         data['leave_balance'] = diff
+        print("% REm ***********************", remaining ," ",leave.leave_id)
         data['days'] = ""
 
         result.append(data)

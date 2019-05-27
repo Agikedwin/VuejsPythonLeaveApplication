@@ -27,8 +27,9 @@
         <td class="text-xs-left">{{ props.item.program }}</td>
         <td class="text-xs-left">{{ props.item.nationalty }}</td>
         <td class="text-xs-left">{{ props.item.passport_idno }}</td>
-        <td class="text-xs-left"><v-btn flat fab small @click="EditEmployee(props.item)" ><v-icon class="teal--text">edit</v-icon></v-btn></td>
         <td class="text-xs-left"><v-btn flat fab small @click="viewEmployee(props.item)" ><v-icon class="teal--text">visibility</v-icon></v-btn></td>
+        <td class="text-xs-left"><v-btn flat fab small @click="EditEmployee(props.item)" ><v-icon class="teal--text">edit</v-icon></v-btn></td>
+
       </template>
       <v-alert slot="no-results" :value="true" color="error" icon="warning">
         Your search for "{{ search }}" found no results.
