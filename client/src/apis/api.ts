@@ -8,8 +8,8 @@ import dev from '../config/dev'
 
 ////127.0.0.1:5000/api/ 
 //let url = 'http://192.168.88.159:5000/api/'
-let url = 'http://41.89.200.55/api/'
-//let url = 'http://127.0.0.1:5000/api/'
+//let url = 'http://41.89.200.55/api/'
+let url = 'http://127.0.0.1:5000/api/'
 //let url = environ.API_URL;
 
 //const API_URL = process.env.API_URL
@@ -165,7 +165,8 @@ export default {
 
             })
             .catch(error => {
-                console.log(error);
+                data = "serverError"
+                console.log("LOGING ERROR AT API SERVER NOT FOUND ::: ",error);
             })
         
 

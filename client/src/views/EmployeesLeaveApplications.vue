@@ -27,7 +27,7 @@
             <v-tooltip bottom>
               <template v-slot:activator="{ on }">
                 <v-btn flat fab color="info" v-on="on">
-                  <v-icon dark>event</v-icon>
+                  <v-icon >info</v-icon>
                 </v-btn>
               </template>
               <span>Pending</span>

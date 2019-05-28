@@ -277,11 +277,14 @@
                       color="teal--text"
                       :rules="passwordRules"
                     ></v-text-field>
-                    <div v-if="validatepwd">
+                    <div v-if="validatepwd && !serverError">
                     <span class="red--text">Wrong username or password !! please try again </span>
                     </div>
-                    <div v-if="supervisorExists">
+                    <div v-if="supervisorExists && !serverError">
                     <span class="red--text">You do not have a supervisor!! Please contact Hr for assistance </span>
+                    </div>
+                    <div v-if="serverError">
+                    <span class="teal--text">Server unreachable, probably network error </span>
                     </div>
                   </v-form>
                 </v-card-text>
@@ -316,7 +319,7 @@ export default {
     drawerRight: null,
     right: false,
     left: false,
-    login: true,
+    login: false,
     loginState:false,
     validatepwd:false,
     supervisorExists:false,
@@ -327,6 +330,7 @@ export default {
     userLoggeInPayroll:"",
     userLoggeInDOA:"",
     accruedDays:"",
+    serverError:false,
     LoginForm: {
       username: "",
       password: ""
@@ -415,32 +419,39 @@ export default {
       await api
         .loginUser("userLogin", payload)
         .then(result => {
-          //console.log("RESPONSE AT LOGIN ************ ",result)
+          console.log("RESPONSE AT LOGIN ************ ",result)
           if(result == "False"){
             //console.log("RESPONSE AT LOGIN 111 ",result)
             this.supervisorExists = true;
+            this.serverError = false;
           }else {
 
            this.supervisorExists = false;
 
            // console.log("RESPONSE AT LOGIN  22",result)
-          if (result != null) {
+          if (result != null && result != 'serverError') {
             this.login = true;
             this.validatepwd = false
             this.supervisorExists = false
+            this.serverError = false;
             this.accessPreviledges(result.data.user_details)
             console.log("Login ", result);
           } else {
             this.validatepwd=true
+            this.serverError = false;
             console.log("Wrong Pwd");
-          }
+          }          
           //console.log("AT LOGIN 22", localStorage.getItem("userSession"));
 
+          }
+          if(result=='serverError'){
+            this.serverError = true
+            console.log("Error reaching the server")
           }
           
         })
         .catch(error => {
-          console.log(error);
+          console.log("LOGIN SOME ERRORS ::: ",error);
         });
     },
     // get user cadre
@@ -530,7 +541,8 @@ export default {
           this.login =false;
           console.log("HERE 11",tokenState.isValidJwt(localStorage.getItem('tokenKey')));
 
-        }}, 10000); */
+        }
+        }, 2000);  */
   },
 
     watch: {

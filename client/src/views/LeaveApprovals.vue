@@ -23,8 +23,8 @@
         <td class="text-xs-left">
           <v-tooltip bottom>
             <template v-slot:activator="{ on }">
-              <v-btn flat fab class="teal--text" v-on="on" @click="declineSelected(props.item)">
-                <v-icon dark>eject</v-icon>
+              <v-btn flat fab class="red--text" v-on="on" @click="declineSelected(props.item)">
+                <v-icon dark>cancel</v-icon>
               </v-btn>
             </template>
             <span>Click to decline</span>
